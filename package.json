@@ -25,6 +25,7 @@
   },
 
   "dependencies": {
+    "mysql": "~2.3.2",
     "express": "~3.4.4"
   },
   "devDependencies": {},
