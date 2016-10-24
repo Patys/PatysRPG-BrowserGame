@@ -14,6 +14,7 @@ var pool = mysql.createPool({
 
 
 app.set('view engine', 'pug');
+app.set('views', './public/views')
 
 app.get('/test', function (req, res) {
   res.render('index', { title: 'Hey', message: 'Hello there!'});
