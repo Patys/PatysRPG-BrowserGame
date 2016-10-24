@@ -1,6 +1,7 @@
 var express = require('express');
 var app = express();
 var mysql = require('mysql');
+var pug = require('pug');
 var conndburl = process.env.OPENSHIFT_MYSQL_DB_URL;
 console.log(conndburl);
 var pool = mysql.createPool({
@@ -11,6 +12,12 @@ var pool = mysql.createPool({
       database : process.env.OPENSHIFT_APP_NAME
     });
 
+
+app.set('view engine', 'pug');
+
+app.get('/test', function (req, res) {
+  res.render('index', { title: 'Hey', message: 'Hello there!'});
+});
 
 app.get('/', function (req, res) {
   query = "SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES";
