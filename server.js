@@ -35,6 +35,7 @@ app.use(session({
 // http://stackoverflow.com/questions/33466249/how-to-make-express-routes-require-authentication-by-default
 //TODO ADD AUTH
 function checkAuth(req, res, next) {
+  console.dir(req.session.user_id);
   if (!req.session.user_id) {
     res.send('You are not authorized to view this page');
   } else {
@@ -54,7 +55,6 @@ app.get('/login', function (req, res) {
 
 app.post('/login', function (req, res) {
   var post = req.body;
-  console.dir(req);
   if (post.username === 'john' && post.password === '123') {
     req.session.user_id = "1234567890-=-";
     res.redirect('/game');
