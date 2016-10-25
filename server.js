@@ -21,11 +21,11 @@ app.set('views', './public/views');
 app.set('trust proxy', 1);
 app.use(session({
   secret: 'bardzo tajne i dkugie haslo',
-  resave: false,
-  saveUninitialized: true,
+  // resave: false,
+  // saveUninitialized: true,
   cookie: {
-    path    : '/',
-    secure: true
+    path    : '/'
+    // secure: true
   }
 }));
 ///////////////////////
