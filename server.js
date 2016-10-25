@@ -13,7 +13,7 @@ var pool = mysql.createPool({
     });
 
 
-var auth = require('app.auth');
+var auth = require('./app/auth');
 
 app.set('view engine', 'pug');
 app.set('views', './public/views');
