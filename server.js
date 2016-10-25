@@ -25,7 +25,7 @@ app.use(session({
   // saveUninitialized: true,
   cookie: {
     path    : '/'
-    // secure: true
+    secure: true
   }
 }));
 ///////////////////////
