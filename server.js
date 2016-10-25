@@ -1,6 +1,7 @@
 var express = require('express');
 var app = express();
 var session = require('express-session');
+var bodyParser = require('body-parser');
 var mysql = require('mysql');
 var pug = require('pug');
 var conndburl = process.env.OPENSHIFT_MYSQL_DB_URL;
@@ -11,6 +12,9 @@ var pool = mysql.createPool({
       port     : process.env.OPENSHIFT_MYSQL_DB_PORT,
       database : process.env.OPENSHIFT_APP_NAME
     });
+    
+app.use(bodyParser.json()); // for parsing application/json
+app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
 
 app.set('view engine', 'pug');
 app.set('views', './public/views');
