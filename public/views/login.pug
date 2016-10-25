@@ -1,0 +1,9 @@
+html
+  head
+    title= title
+  body
+    h1= message
+    form(action="/login", method="POST")
+      input(name="password" type="password")
+      input(name="username" type="text")
+      input(type="submit")

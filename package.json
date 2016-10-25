@@ -27,7 +27,8 @@
   "dependencies": {
     "mysql": "~2.3.2",
     "express": "~3.4.4",
-    "pug": "*"
+    "pug": "*",
+    "express-session" : "*"
   },
   "devDependencies": {},
   "bundleDependencies": [],

@@ -1,5 +1,6 @@
 var express = require('express');
 var app = express();
+var session = require('express-session');
 var mysql = require('mysql');
 var pug = require('pug');
 var conndburl = process.env.OPENSHIFT_MYSQL_DB_URL;
@@ -12,24 +13,38 @@ var pool = mysql.createPool({
     });
 
 
+var auth = require('app.auth');
+
 app.set('view engine', 'pug');
 app.set('views', './public/views');
-
+app.set('trust proxy', 1);
+app.use(session({
+  secret: 'bardzo tajne i dkugie haslo',
+  resave: false,
+  saveUninitialized: true,
+  cookie: {
+    secure: true
+  }
+}));
 ///////////////////////
 //AUTH TEST
 //////////////////////
-//  session = require('express-session'),
+//  ,
 // http://stackoverflow.com/questions/33466249/how-to-make-express-routes-require-authentication-by-default
 //TODO ADD AUTH
 
 
-app.get('/game', checkAuth, function (req, res) {
+app.get('/game', auth.checkAuth, function (req, res) {
   res.render('index', { title: 'Hey', message: 'Hello there!'});
+});
+
+app.get('/login', function (req, res) {
+  res.render('login', { title: 'Hey', message: 'Hello there!'});
 });
 
 app.post('/login', function (req, res) {
   var post = req.body;
-  if (post.user === 'john' && post.password === 'johnspassword') {
+  if (post.username === 'john' && post.password === 'johnspassword') {
     req.session.user_id = johns_user_id_here;
     res.redirect('/game');
   } else {
@@ -37,15 +52,6 @@ app.post('/login', function (req, res) {
   }
 });
 
-function checkAuth(req, res, next) {
-  if (!req.session.user_id) {
-    res.send('You are not authorized to view this page');
-  } else {
-    // Moze wywalac, wymusza rerender
-    //res.header('Cache-Control', 'no-cache, private, no-store, must-revalidate, max-stale=0, post-check=0, pre-check=0');
-    next();
-  }
-}
 
 app.get('/logout', function (req, res) {
   delete req.session.user_id;
