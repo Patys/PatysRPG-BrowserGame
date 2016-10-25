@@ -46,11 +46,11 @@ function checkAuth(req, res, next) {
 }
 
 app.get('/game', checkAuth, function (req, res) {
-  res.render('index', { title: 'Hey', message: 'Hello there!'});
+  res.render('index', { title: 'PatysRPG', message: 'Właśnie grasz :D'});
 });
 
 app.get('/login', function (req, res) {
-  res.render('login', { title: 'Hey', message: 'Hello there!'});
+  res.render('login', { title: 'Logowanie', message: 'Logujemy sie'});
 });
 
 app.post('/login', function (req, res) {
