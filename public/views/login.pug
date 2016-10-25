@@ -4,6 +4,6 @@ html
   body
     h1= message
     form(action="/login", method="POST")
-      input(name="password" type="password")
-      input(name="username" type="text")
+      input(id="password", name="password" type="password")
+      input(id="username", name="username" type="text")
       input(type="submit")
