@@ -12,10 +12,6 @@ var pool = mysql.createPool({
       database : process.env.OPENSHIFT_APP_NAME
     });
 
-
-var auth = require('./app/auth');
-console.log(auth);
-
 app.set('view engine', 'pug');
 app.set('views', './public/views');
 app.set('trust proxy', 1);
@@ -34,9 +30,17 @@ app.use(session({
 //  ,
 // http://stackoverflow.com/questions/33466249/how-to-make-express-routes-require-authentication-by-default
 //TODO ADD AUTH
+function checkAuth(req, res, next) {
+  if (!req.session.user_id) {
+    res.send('You are not authorized to view this page');
+  } else {
+    // Moze wywalac, wymusza rerender
+    //res.header('Cache-Control', 'no-cache, private, no-store, must-revalidate, max-stale=0, post-check=0, pre-check=0');
+    next();
+  }
+}
 
-
-app.get('/game', auth.checkAuth, function (req, res) {
+app.get('/game', checkAuth, function (req, res) {
   res.render('index', { title: 'Hey', message: 'Hello there!'});
 });
 
