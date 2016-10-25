@@ -55,7 +55,7 @@ app.get('/login', function (req, res) {
 app.post('/login', function (req, res) {
   var post = req.body;
   console.dir(req);
-  if (post.username === 'john' && post.password === 'johnspassword') {
+  if (post.username === 'john' && post.password === '123') {
     req.session.user_id = "1234567890-=-";
     res.redirect('/game');
   } else {
