@@ -12,4 +12,5 @@ var auth = {
     ////////
 };
 
-exports.auth = auth;
+module.exports.auth = auth;
+module.exports.auth.checkAuth = auth.checkAuth;
