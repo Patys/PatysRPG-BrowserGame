@@ -12,7 +12,7 @@ var pool = mysql.createPool({
       port     : process.env.OPENSHIFT_MYSQL_DB_PORT,
       database : process.env.OPENSHIFT_APP_NAME
     });
-    
+
 app.use(bodyParser.json()); // for parsing application/json
 app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
 
@@ -56,7 +56,7 @@ app.post('/login', function (req, res) {
   var post = req.body;
   console.dir(req);
   if (post.username === 'john' && post.password === 'johnspassword') {
-    req.session.user_id = johns_user_id_here;
+    req.session.user_id = "1234567890-=-";
     res.redirect('/game');
   } else {
     res.send('Bad user/pass');
