@@ -14,6 +14,7 @@ var pool = mysql.createPool({
 
 
 var auth = require('./app/auth');
+console.log(auth);
 
 app.set('view engine', 'pug');
 app.set('views', './public/views');
