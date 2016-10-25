@@ -23,6 +23,7 @@ app.use(session({
   resave: false,
   saveUninitialized: true,
   cookie: {
+    path    : '/',
     secure: true
   }
 }));
