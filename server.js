@@ -65,7 +65,6 @@ app.post('/login', function (req, res) {
        if(err) {
          res.json(err);
        } else {
-          res.json(rows);
           if(post.username === rows.name && post.password === rows.password) {
             req.session.user_id = rows.token;
             res.redirect('/game');
