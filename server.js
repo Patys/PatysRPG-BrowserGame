@@ -55,7 +55,9 @@ app.get('/login', function (req, res) {
 
 app.post('/login', function (req, res) {
   var post = req.body;
-  var query = "SELECT users.name, users.password, users.token FROM users WHERE users.name=" + post.username + " AND users.password=" + post.password + "";
+  var query = "SELECT users.name, users.password, users.token FROM users";
+  //WHERE users.name=" + post.username + " AND users.password=" + post.password + "";
+  console.dir(query);
   pool.getConnection(function(err, conn){
     if(err) {
       res.json(err);
