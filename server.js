@@ -59,11 +59,11 @@ app.post('/login', function (req, res) {
                 password=" + post.password + "";
   pool.getConnection(function(err, conn){
     if(err) {
-      res.send('Bad user/pass');
+      res.json(err);
     } else {
        conn.query(query, function(err, rows) {
        if(err) {
-         res.send('Bad user/pass');
+         res.json(err);
        } else {
          req.session.user_id = rows.token;
            res.redirect('/game');
