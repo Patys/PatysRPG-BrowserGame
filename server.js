@@ -37,7 +37,7 @@ app.use(session({
 function checkAuth(req, res, next) {
   console.dir(req.session.user_id);
   if (!req.session.user_id) {
-    res.send('You are not authorized to view this page');
+    res.send('You are not authorized to viewtest this page');
   } else {
     // Moze wywalac, wymusza rerender
     //res.header('Cache-Control', 'no-cache, private, no-store, must-revalidate, max-stale=0, post-check=0, pre-check=0');
