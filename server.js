@@ -55,12 +55,22 @@ app.get('/login', function (req, res) {
 
 app.post('/login', function (req, res) {
   var post = req.body;
-  if (post.username === 'john' && post.password === '123') {
-    req.session.user_id = "1234567890-s=-";
-    res.redirect('/game');
-  } else {
-    res.send('Bad user/pass');
-  }
+  var query = "SELECT name, password, token FROM users where name=" + post.username + " AND \
+                password=" + post.password + "";
+  pool.getConnection(function(err, conn){
+    if(err) {
+      res.send('Bad user/pass');
+    } else {
+       conn.query(query, function(err, rows) {
+       if(err) {
+         res.send('Bad user/pass');
+       } else {
+         req.session.user_id = rows.token;
+           res.redirect('/game');
+       }
+     });
+    }
+  });
 });
 
 

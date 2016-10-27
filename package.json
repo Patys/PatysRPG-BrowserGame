@@ -1,19 +1,16 @@
 {
-  "name": "OpenShift-Sample-App",
+  "name": "PatysRPG",
   "version": "1.0.0",
-  "description": "OpenShift Sample Application",
+  "description": "PatysRPG",
   "keywords": [
-    "OpenShift",
-    "Node.js",
-    "application",
-    "openshift"
+    "PatysRPG"
   ],
   "author": {
-    "name": "OpenShift",
-    "email": "ramr@example.org",
-    "url": "http://www.openshift.com/"
+    "name": "PatysRPG",
+    "email": "patys.prog@gmail.com",
+    "url": "PatysRPG"
   },
-  "homepage": "http://www.openshift.com/",
+  "homepage": "PatysRPG",
   "repository": {
     "type": "git",
     "url": "https://github.com/openshift/origin-server"
