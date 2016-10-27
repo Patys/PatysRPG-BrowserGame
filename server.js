@@ -55,8 +55,8 @@ app.get('/login', function (req, res) {
 
 app.post('/login', function (req, res) {
   var post = req.body;
-  var query = "SELECT name, password, token FROM users where name=" + post.username + " AND \
-                password=" + post.password + "";
+  var query = "SELECT users.name, users.password, users.token FROM users where users.name=" + post.username + " AND \
+                users.password=" + post.password + "";
   pool.getConnection(function(err, conn){
     if(err) {
       res.json(err);
@@ -65,8 +65,8 @@ app.post('/login', function (req, res) {
        if(err) {
          res.json(err);
        } else {
-         req.session.user_id = rows.token;
-           res.redirect('/game');
+          req.session.user_id = rows.token;
+          res.redirect('/game');
        }
      });
     }
