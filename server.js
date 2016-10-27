@@ -56,7 +56,7 @@ app.get('/login', function (req, res) {
 app.post('/login', function (req, res) {
   var post = req.body;
   if (post.username === 'john' && post.password === '123') {
-    req.session.user_id = "1234567890-=-";
+    req.session.user_id = "1234567890-s=-";
     res.redirect('/game');
   } else {
     res.send('Bad user/pass');
