@@ -55,28 +55,25 @@ app.get('/login', function (req, res) {
 
 app.post('/login', function (req, res) {
   var post = req.body;
-  var query = "SELECT users.name, users.password, users.token FROM users where users.name=\""+ post.username+"\" AND users.password=\""+post.password+"\"";
+  var query = "SELECT users.name, users.password, users.token FROM users";
   //WHERE users.name=" + post.username + " AND users.password=" + post.password + "";
   pool.getConnection(function(err, conn){
-    console.dir(err);
     if(err) {
-      res.json(err);
+      res.send('Bad user/passw');
     } else {
-       conn.query(query, function(err, rows) {
-         console.dir(err);
-         if(err) {
-           res.json(err);
-         } else {
-           console.dir(rows);
-           if(post.username === rows.name && post.password === rows.password) {
+      conn.query(query, function(err, rows) {
+        if(err) {
+          res.send('Bad user/passw');
+        } else {
+          if(post.username === rows.name && post.password === rows.password) {
             req.session.user_id = rows.token;
             res.redirect('/game');
-           } else {
-             res.send('something bad happen');
-           }
-         }
-       });
-     }
+          }else {
+            res.send('Bad user/passw');
+          }
+        }
+      });
+    }
   });
 });
 
@@ -87,20 +84,22 @@ app.get('/logout', function (req, res) {
 });
 /////////////////////////
 app.get('/', function (req, res) {
-  query = "SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES";
-  pool.getConnection(function(err, conn){
-    if(err) {
-      res.json(err);
-    } else {
-       conn.query(query, function(err, rows) {
-       if(err) {
-         res.json(err);
-       } else {
-          res.json(rows);
-       }
-     });
-    }
-  });
+  res.render('index');
+
+  // query = "SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES";
+  // pool.getConnection(function(err, conn){
+  //   if(err) {
+  //     res.json(err);
+  //   } else {
+  //      conn.query(query, function(err, rows) {
+  //      if(err) {
+  //        res.json(err);
+  //      } else {
+  //         res.json(rows);
+  //      }
+  //    });
+  //   }
+  // });
 });
 
 app.listen(process.env.OPENSHIFT_NODEJS_PORT || 8080, process.env.OPENSHIFT_NODEJS_IP || "127.0.0.1", function () {
