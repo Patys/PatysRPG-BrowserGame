@@ -3,9 +3,10 @@ html
     include link.pug
   body
     h1 Logowanie
-    form(action="/login", method="POST")
-      input(id="username", name="username" type="text")
-      input(id="password", name="password" type="password")
-      input(type="submit")
+    .container
+      form(action="/login", method="POST")
+        input(id="username", name="username" type="text")
+        input(id="password", name="password" type="password")
+        input(type="submit")
 
     include scripts.pug
