@@ -2,15 +2,16 @@ html
   head
     link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css", integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u", crossorigin="anonymous")
     link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css", integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp", crossorigin="anonymous")
-    title= "PatysRPG"
+    title PatysRPG
   body
-    h1= "PatysRPG"
-    p= "Najlepsze RPG jakie Patyś kiedykolwiek stworzył."
-    p= "Fantasy, epic to są słowa opisujące tą gre."
-    a(href="login")
-      Logowanie
-    a(href="register")
-      Rejestracja
+    .container
+      .jumbotron
+        h1 PatysRPG
+        p= "Najlepsze RPG jakie Patyś kiedykolwiek stworzył."
+        p= "Fantasy, epic to są słowa opisujące tą gre."
+    .container
+      a(href="login" class="btn btn-large btn-primary") Logowanie
+      a(href="register" class="btn btn-large btn-warning") Rejestracja
 
     script(src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js")
     script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js", integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa", crossorigin="anonymous")
