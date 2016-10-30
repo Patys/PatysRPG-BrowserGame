@@ -1,6 +1,6 @@
 var routes = require('express').Router();
 
-var index = require('./app/index');
+var index = require('./index');
 
 routes.get('/', index);
 
