@@ -63,13 +63,16 @@ app.post('/login', function (req, res) {
       res.json(err);
     } else {
        conn.query(query, function(err, rows) {
+         console.dir(err);
          if(err) {
            res.json(err);
          } else {
-          if(post.username === rows.name && post.password === rows.password) {
-            req.session.user_id = rows.token;
-            res.redirect('/game');
-          }
+         if(post.username === rows.name && post.password === rows.password) {
+          req.session.user_id = rows.token;
+          res.redirect('/game');
+         } else {
+           res.send('something bad happen');
+         }
        }
      });
     }
