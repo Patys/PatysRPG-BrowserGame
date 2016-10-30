@@ -17,11 +17,13 @@ module.exports.post = function (req, res) {
   //WHERE users.name=" + post.username + " AND users.password=" + post.password + "";
   pool.getConnection(function(err, conn){
     if(err) {
-      res.send('Bad user/passw');
+      res.json(err);
+      // res.send('Bad user/passw');
     } else {
       conn.query(query, function(err, rows) {
         if(err) {
-          res.send('Bad user/passw');
+          res.json(err);
+          // res.send('Bad user/passw');
         } else {
           if(post.username === rows.name && post.password === rows.password) {
             req.session.user_id = rows.token;
