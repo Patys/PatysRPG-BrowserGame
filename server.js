@@ -58,13 +58,14 @@ app.post('/login', function (req, res) {
   var query = "SELECT users.name, users.password, users.token FROM users where users.name=\""+ post.username+"\" AND users.password=\""+post.password+"\"";
   //WHERE users.name=" + post.username + " AND users.password=" + post.password + "";
   pool.getConnection(function(err, conn){
+    console.dir(err);
     if(err) {
       res.json(err);
     } else {
        conn.query(query, function(err, rows) {
-       if(err) {
-         res.json(err);
-       } else {
+         if(err) {
+           res.json(err);
+         } else {
           if(post.username === rows.name && post.password === rows.password) {
             req.session.user_id = rows.token;
             res.redirect('/game');
