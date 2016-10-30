@@ -6,6 +6,6 @@ var login = require('./login');
 
 routes.get('/', index);
 routes.get('/login', login.get);
-routes.get('/login', login.post);
+routes.post('/login', login.post);
 
 module.exports = routes;
