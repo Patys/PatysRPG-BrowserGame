@@ -25,11 +25,10 @@ module.exports.post = function (req, res) {
           res.json(err);
           // res.send('Bad user/passw');
         } else {
-          console.dir(rows);
-          console.dir(post);
-          console.log();
+          console.dir(req.session);
           if(post.username === rows[0].name && post.password === rows[0].password) {
             req.session.user_id = rows.token;
+            console.dir(req.session);
             console.log(req.session.user_id);
             res.redirect('/game');
           }else {
