@@ -22,6 +22,7 @@ var game = require('./game');
 
 routes.use(function(req, res, next) {
     // log each request to the console
+    console.dir(req.session);
     console.log(req.method, req.url);
     next();
 });
