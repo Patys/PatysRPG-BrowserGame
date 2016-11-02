@@ -1,5 +1,6 @@
 var express = require('express');
 var app = express();
+var session = require('express-session');
 // var mysql = require('mysql');
 var pug = require('pug');
 var routes = require('./app/routes');
@@ -16,15 +17,15 @@ var routes = require('./app/routes');
 app.set('view engine', 'pug');
 app.set('views', './public/views');
 app.set('trust proxy', 1);
-// app.use(session({
-//   secret: 'bardzo tajne i dkugie haslo',
-//   // resave: false,
-//   // saveUninitialized: true,
-//   cookie: {
-//     path    : '/',
-//     // secure: true
-//   }
-// }));
+app.use(session({
+  secret: 'bardzo tajne i dkugie haslo',
+  // resave: false,
+  // saveUninitialized: true,
+  cookie: {
+    path    : '/',
+    // secure: true
+  }
+}));
 
 app.use('/', routes);
 
