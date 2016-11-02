@@ -1,7 +1,10 @@
 var express = require('express');
+var session = require('express-session');
 var bodyParser = require('body-parser');
-var jsonParser = bodyParser.json({ type: 'application/json'});
 var routes = express.Router();
+
+routes.use(bodyParser.json()); // for parsing application/json
+routes.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
 
 var auth = require('./auth');
 var index = require('./index');
@@ -16,7 +19,7 @@ routes.use(function(req, res, next) {
 });
 routes.get('/', index);
 routes.get('/login', login.get);
-routes.post('/login', jsonParser, login.post);
-routes.get('/game', jsonParser, auth.check, game.get);
+routes.post('/login', login.post);
+routes.get('/game', auth.check, game.get);
 
 module.exports = routes;
