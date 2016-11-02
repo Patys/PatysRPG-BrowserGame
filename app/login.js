@@ -27,8 +27,9 @@ module.exports.post = function (req, res) {
         } else {
           console.dir(req.session);
           if(post.username === rows[0].name && post.password === rows[0].password) {
-            req.session.user_id = rows.token;
+            req.session.user_id = rows[0].token;
             console.dir(req.session);
+            console.dir(rows[0].token);
             console.log(req.session.user_id);
             res.redirect('/game');
           }else {
