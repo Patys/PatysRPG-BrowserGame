@@ -1,6 +1,6 @@
 
 module.exports.check = function (req, res, next) {
-  console.log(req.session.user_id);
+  console.dir(req.session);
   if (!req.session.user_id) {
     res.send('You are not authorized to viewtest this page');
   } else {
