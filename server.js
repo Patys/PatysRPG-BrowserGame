@@ -2,17 +2,17 @@ var express = require('express');
 var app = express();
 var session = require('express-session');
 var bodyParser = require('body-parser');
-var mysql = require('mysql');
+// var mysql = require('mysql');
 var pug = require('pug');
 var routes = require('./app/routes');
-var conndburl = process.env.OPENSHIFT_MYSQL_DB_URL;
-var pool = mysql.createPool({
-      host     : process.env.OPENSHIFT_MYSQL_DB_HOST,
-      user     : process.env.OPENSHIFT_MYSQL_DB_USERNAME,
-      password : process.env.OPENSHIFT_MYSQL_DB_PASSWORD,
-      port     : process.env.OPENSHIFT_MYSQL_DB_PORT,
-      database : process.env.OPENSHIFT_APP_NAME
-    });
+// var conndburl = process.env.OPENSHIFT_MYSQL_DB_URL;
+// var pool = mysql.createPool({
+//       host     : process.env.OPENSHIFT_MYSQL_DB_HOST,
+//       user     : process.env.OPENSHIFT_MYSQL_DB_USERNAME,
+//       password : process.env.OPENSHIFT_MYSQL_DB_PASSWORD,
+//       port     : process.env.OPENSHIFT_MYSQL_DB_PORT,
+//       database : process.env.OPENSHIFT_APP_NAME
+//     });
 
 app.use(bodyParser.json()); // for parsing application/json
 app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
