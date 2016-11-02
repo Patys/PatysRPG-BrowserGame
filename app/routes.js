@@ -1,7 +1,16 @@
 var express = require('express');
 var bodyParser = require('body-parser');
+var session = require('express-session');
 var routes = express.Router();
-
+routes.use(session({
+  secret: 'bardzo tajne i dkugie haslo',
+  // resave: false,
+  // saveUninitialized: true,
+  cookie: {
+    path    : '/',
+    // secure: true
+  }
+}));
 routes.use(bodyParser.json()); // for parsing application/json
 routes.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
 
