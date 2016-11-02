@@ -27,7 +27,7 @@ module.exports.post = function (req, res) {
         } else {
           if(post.username === rows[0].name && post.password === rows[0].password) {
             res.send('Uzytkownik istnieje');
-          }else {
+          } else {
             var queryInsert = "INSERT INTO users VALUES ('',"+post.username+","+post.password+","+post.email+""+Date.now()+""+guid()+");";
             conn.query(queryInsert, function(err, rows) {
               if(err) {
@@ -36,13 +36,12 @@ module.exports.post = function (req, res) {
               } else {
                 res.redirect('/login');
               }
-            }
+            });
           }
-        });
-      }
-    });
-  }
-}
+        }
+      });
+    }
+});
 
 function guid() {
   function s4() {
