@@ -41,7 +41,8 @@ module.exports.post = function (req, res) {
         }
       });
     }
-});
+  });
+}
 
 function guid() {
   function s4() {
