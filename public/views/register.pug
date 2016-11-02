@@ -8,7 +8,10 @@ html
         p= "Najlepsze RPG jakie Patyś kiedykolwiek stworzył."
         p= "Fantasy, epic to są słowa opisujące tą gre."
     .container
-      h1 Tutaj bedzie rejestracja
-      p lol
+      form(action="/register", method="POST")
+        input(id="email", name="email" type="email")
+        input(id="username", name="username" type="text")
+        input(id="password", name="password" type="password")
+        input(type="submit")
 
     include scripts.pug

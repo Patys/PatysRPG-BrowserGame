@@ -8,5 +8,6 @@ var pool = mysql.createPool({
   });
 
 module.exports.get = function (req, res) {
-  res.render('index');
+  res.render('game');
+  
 }

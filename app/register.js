@@ -8,7 +8,7 @@ var pool = mysql.createPool({
   });
 
 module.exports.get = function (req, res) {
-  res.render('login', { title: 'Logowanie', message: 'Logujemy sie'});
+  res.render('register');
 }
 
 module.exports.post = function (req, res) {
@@ -26,13 +26,29 @@ module.exports.post = function (req, res) {
           // res.send('Bad user/passw');
         } else {
           if(post.username === rows[0].name && post.password === rows[0].password) {
-            req.session.user_id = rows[0].token;
-            res.redirect('/game');
+            res.send('Uzytkownik istnieje');
           }else {
-            res.send('Bad user/passw');
+            var queryInsert = "INSERT INTO users VALUES ('',"+post.username+","+post.password+","+post.email+""+Date.now()+""+guid()+");";
+            conn.query(queryInsert, function(err, rows) {
+              if(err) {
+                res.json(err);
+                // res.send('Bad user/passw');
+              } else {
+                res.redirect('/login');
+              }
           }
         }
       });
     }
   });
+}
+
+function guid() {
+  function s4() {
+    return Math.floor((1 + Math.random()) * 0x10000)
+      .toString(16)
+      .substring(1);
+  }
+  return s4() + s4() + '-' + s4() + '-' + s4() + '-' +
+    s4() + '-' + s4() + s4() + s4();
 }

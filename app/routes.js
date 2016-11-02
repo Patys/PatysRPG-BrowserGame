@@ -18,17 +18,19 @@ var auth = require('./auth');
 var index = require('./index');
 var login = require('./login');
 var game = require('./game');
+var register = require('./register');
 
 
 routes.use(function(req, res, next) {
     // log each request to the console
-    console.dir(req.session);
     console.log(req.method, req.url);
     next();
 });
 routes.get('/', index);
 routes.get('/login', login.get);
 routes.post('/login', login.post);
+routes.get('/register', register.get);
+routes.post('/register', register.post);
 routes.get('/game', auth.check, game.get);
 
 module.exports = routes;
