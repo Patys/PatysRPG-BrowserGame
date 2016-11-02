@@ -17,6 +17,6 @@ routes.use(function(req, res, next) {
 routes.get('/', index);
 routes.get('/login', login.get);
 routes.post('/login', jsonParser, login.post);
-routes.get('/game', auth.check, game.get);
+routes.get('/game', jsonParser, auth.check, game.get);
 
 module.exports = routes;
