@@ -4,20 +4,9 @@ html
     link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css')
     link(href='https://fonts.googleapis.com/css?family=Passion+One', rel='stylesheet', type='text/css')
     link(href='https://fonts.googleapis.com/css?family=Oxygen', rel='stylesheet', type='text/css')
-    link(href='register.css', rel='stylesheet', type='text/css')
+    link(href='public/register.css', rel='stylesheet', type='text/css')
 
   body
-    .container
-      .jumbotron
-        h1 PatysRPG
-        p= "Najlepsze RPG jakie Patyś kiedykolwiek stworzył."
-        p= "Fantasy, epic to są słowa opisujące tą gre."
-    .container
-      form(action="/register", method="POST")
-        input(id="email", name="email" type="email")
-        input(id="username", name="username" type="text")
-        input(id="password", name="password" type="password")
-        input(type="submit")
     .container
       .row.main
         .panel-heading
