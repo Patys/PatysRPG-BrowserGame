@@ -25,7 +25,7 @@ module.exports.post = function (req, res) {
           res.json(err);
           // res.send('Bad user/passw');
         } else {
-          if(rows[0].name || rows[0].email) {
+          if(rows[0]) {
             res.send('Uzytkownik istnieje');
           } else {
             var queryInsert = "INSERT INTO users VALUES ('',\""+post.username+"\",\""+post.password+"\",\""+post.email+"\",\""+Date().toISOString().slice(0, 19).replace('T', ' ');+"\",\""+guid()+"\");";
