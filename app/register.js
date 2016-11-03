@@ -28,7 +28,7 @@ module.exports.post = function (req, res) {
           if(post.username === rows[0].name && post.password === rows[0].password) {
             res.send('Uzytkownik istnieje');
           } else {
-            var queryInsert = "INSERT INTO users VALUES ('',"+post.username+","+post.password+","+post.email+""+Date.now()+""+guid()+");";
+            var queryInsert = "INSERT INTO users VALUES ('',\""+post.username+"\",\""+post.password+"\",\""+post.email+"\",\""+Date.now()+"\",\""+guid()+"\");";
             conn.query(queryInsert, function(err, rows) {
               if(err) {
                 res.json(err);
