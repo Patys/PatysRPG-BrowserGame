@@ -13,7 +13,8 @@ module.exports.get = function (req, res) {
 
 module.exports.post = function (req, res) {
   var post = req.body;
-  var query = "SELECT users.name, users.password, users.token FROM users";
+  var query = "SELECT users.name, users.password, users.token FROM 'users' \
+              WHERE 'name'='"+post.username+"' AND 'password'='"+post.password+"'";
   //WHERE users.name=" + post.username + " AND users.password=" + post.password + "";
   pool.getConnection(function(err, conn){
     if(err) {
