@@ -32,5 +32,9 @@ routes.post('/login', login.post);
 routes.get('/register', register.get);
 routes.post('/register', register.post);
 routes.get('/game', auth.check, game.get);
+routes.get('/logout', function (req, res) {
+  delete req.session.user_id;
+  res.redirect('/login');
+});
 
 module.exports = routes;
