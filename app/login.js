@@ -13,14 +13,14 @@ module.exports.get = function (req, res) {
 
 module.exports.post = function (req, res) {
   var post = req.body;
-  var query = 'SELECT * FROM `users` WHERE `name` = "'+post.username+' AND `password` = "'+post.password+'';
+  var query = 'SELECT * FROM `users` WHERE `name` = ? AND `password` = ?';
   //WHERE users.name=" + post.username + " AND users.password=" + post.password + "";
   pool.getConnection(function(err, conn){
     if(err) {
       res.json(err);
       // res.send('Bad user/passw');
     } else {
-      conn.query(query, function(err, rows) {
+      conn.query(query, [post.username, post.password]function(err, rows) {
         if(err) {
           res.json(err);
           // res.send('Bad user/passw');
