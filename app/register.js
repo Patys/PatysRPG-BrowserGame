@@ -13,22 +13,22 @@ module.exports.get = function (req, res) {
 
 module.exports.post = function (req, res) {
   var post = req.body;
-  var query = "SELECT users.name, users.password, users.token FROM users";
+  var query = 'SELECT name, email FROM `users` WHERE `name` = ?';
   //WHERE users.name=" + post.username + " AND users.password=" + post.password + "";
   pool.getConnection(function(err, conn){
     if(err) {
       res.json(err);
       // res.send('Bad user/passw');
     } else {
-      conn.query(query, function(err, rows) {
+      conn.query(query, [post.username], function(err, rows) {
         if(err) {
           res.json(err);
           // res.send('Bad user/passw');
         } else {
-          if(post.username === rows[0].name && post.password === rows[0].password) {
+          if(post.username === rows[0].name || post.email === rows[0].email) {
             res.send('Uzytkownik istnieje');
           } else {
-            var queryInsert = "INSERT INTO users VALUES ('',\""+post.username+"\",\""+post.password+"\",\""+post.email+"\",\""+Date.now()+"\",\""+guid()+"\");";
+            var queryInsert = "INSERT INTO users VALUES ('',\""+post.username+"\",\""+post.password+"\",\""+post.email+"\",\""+Date().toISOString().slice(0, 19).replace('T', ' ');+"\",\""+guid()+"\");";
             conn.query(queryInsert, function(err, rows) {
               if(err) {
                 res.json(err);
