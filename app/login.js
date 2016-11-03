@@ -20,7 +20,7 @@ module.exports.post = function (req, res) {
       res.json(err);
       // res.send('Bad user/passw');
     } else {
-      conn.query(query, [post.username, post.password]function(err, rows) {
+      conn.query(query, [post.username, post.password], function(err, rows) {
         if(err) {
           res.json(err);
           // res.send('Bad user/passw');
