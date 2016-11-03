@@ -1,12 +1,40 @@
 html
   head
     include link.pug
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css')
+    link(href='https://fonts.googleapis.com/css?family=Passion+One', rel='stylesheet', type='text/css')
+    link(href='https://fonts.googleapis.com/css?family=Oxygen', rel='stylesheet', type='text/css')
+    | <style type="text/css">
+    include ../register.css
+    | </style>
+
   body
-    h1 Logowanie
     .container
-      form(action="/login", method="POST")
-        input(id="username", name="username" type="text")
-        input(id="password", name="password" type="password")
-        input(type="submit")
+      .row.main
+        .panel-heading
+          .panel-title.text-center
+            h1.title PatysRPG
+            hr
+        .main-login.main-center
+          form.form-horizontal(method='post', action='/login')
+            .form-group
+              label.cols-sm-2.control-label(for='username') Nazwa
+              .cols-sm-10
+                .input-group
+                  span.input-group-addon
+                    i.fa.fa-users.fa(aria-hidden='true')
+                  input#username.form-control(type='text', name='username', placeholder='Wpisz nazwe')
+            .form-group
+              label.cols-sm-2.control-label(for='password') Hasło
+              .cols-sm-10
+                .input-group
+                  span.input-group-addon
+                    i.fa.fa-lock.fa-lg(aria-hidden='true')
+                  input#password.form-control(type='password', name='password', placeholder='Wpisz hasło')
+            .form-group
+              button.btn.btn-primary.btn-lg.btn-block.login-button(type='button') Logowanie
+            .login-register
+              a(href='/register') Rejestracja
+
 
     include scripts.pug
