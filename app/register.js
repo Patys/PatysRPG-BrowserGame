@@ -28,7 +28,15 @@ module.exports.post = function (req, res) {
           if(rows[0]) {
             res.send('Uzytkownik istnieje');
           } else {
-            var queryInsert = "INSERT INTO users VALUES ('',\""+post.username+"\",\""+post.password+"\",\""+post.email+"\",\""+Date().toISOString().slice(0, 19).replace('T', ' ');+"\",\""+guid()+"\");";
+            var date;
+            date = new Date();
+            date = date.getUTCFullYear() + '-' +
+                ('00' + (date.getUTCMonth()+1)).slice(-2) + '-' +
+                ('00' + date.getUTCDate()).slice(-2) + ' ' +
+                ('00' + date.getUTCHours()).slice(-2) + ':' +
+                ('00' + date.getUTCMinutes()).slice(-2) + ':' +
+                ('00' + date.getUTCSeconds()).slice(-2);
+            var queryInsert = "INSERT INTO users VALUES ('',\""+post.username+"\",\""+post.password+"\",\""+post.email+"\",\""+date+"\",\""+guid()+"\");";
             conn.query(queryInsert, function(err, rows) {
               if(err) {
                 res.json(err);
