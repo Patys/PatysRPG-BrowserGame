@@ -13,19 +13,19 @@ module.exports.get = function (req, res) {
 
 module.exports.post = function (req, res) {
   var post = req.body;
-  var query = 'SELECT name, email FROM `users` WHERE `name` = ?';
+  var query = 'SELECT name, email FROM `users` WHERE `name` = ? OR `email` = ?';
   //WHERE users.name=" + post.username + " AND users.password=" + post.password + "";
   pool.getConnection(function(err, conn){
     if(err) {
       res.json(err);
       // res.send('Bad user/passw');
     } else {
-      conn.query(query, [post.username], function(err, rows) {
+      conn.query(query, [post.username, post.email], function(err, rows) {
         if(err) {
           res.json(err);
           // res.send('Bad user/passw');
         } else {
-          if(post.username === rows[0].name || post.email === rows[0].email) {
+          if(rows[0].name || rows[0].email) {
             res.send('Uzytkownik istnieje');
           } else {
             var queryInsert = "INSERT INTO users VALUES ('',\""+post.username+"\",\""+post.password+"\",\""+post.email+"\",\""+Date().toISOString().slice(0, 19).replace('T', ' ');+"\",\""+guid()+"\");";
