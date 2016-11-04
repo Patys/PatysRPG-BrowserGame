@@ -7,7 +7,15 @@ var pool = mysql.createPool({
     database : process.env.OPENSHIFT_APP_NAME
   });
 
+var json_game_data = {
+  strength: 5,
+  vitality: 4,
+  inteligence: 2,
+  agility: 666
+
+};
+
 module.exports.get = function (req, res) {
-  res.render('game');
-  
+  res.render('game', json_game_data);
+
 }
