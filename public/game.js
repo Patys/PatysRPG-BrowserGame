@@ -1,5 +1,6 @@
 var main = function() {
   $('div[id^="panel-"]').hide();
+  $('div[id^="panel-character"]').show();
   $('#menu-character').click(function() {
     $('div[id^="panel-"]').hide();
     $('div[id^="panel-character"]').show();
