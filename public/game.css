@@ -5,3 +5,9 @@ body, html{
  	background-color: #FFFFA8;
  	font-family: 'Oxygen', sans-serif;
 }
+
+.jumbotron {
+  text-align: center;
+  background-color: #FFFF12;
+  color: #000;
+}
