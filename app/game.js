@@ -18,13 +18,12 @@ function getData(req) {
         var selectStats = 'SELECT * from characters WHERE "id_user" = ?';
         db.query(selectStats, [result[0].id], conn, function(res1) {
           if(res1[0]) {
-            var json_data = {
+            return {
               strength: res1[0].strength,
               vitality: res1[0].vitality,
               inteligence: res1[0].inteligence,
               agility: res1[0].agility
             };
-            return json_data;
           }
         });
       }
@@ -34,6 +33,7 @@ function getData(req) {
 
 module.exports.get = function (req, res) {
   var json_game_data = getData(req);
+  console.log(json_game_data);
   res.render('game', json_game_data);
 
 }
