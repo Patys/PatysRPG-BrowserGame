@@ -35,7 +35,7 @@ module.exports.post = function (req, res) {
               ('00' + date.getUTCSeconds()).slice(-2);
           var queryInsertUser = "INSERT INTO users VALUES ('',\""+post.username+"\",\""+post.password+"\",\""+post.email+"\",\""+date+"\",\""+guid()+"\");";
           db.query(queryInsertUser,'', conn, function(result) {
-            var queryInsertCharacter = "INSERT INTO characters VALUES ('',\""+result.insertId+"\",\"5\",\"5\",\"5\",\"5\");";
+            var queryInsertCharacter = "INSERT INTO characters VALUES ('',\""+result.insertId+"\",\"5\",\"5\",\"5\",\"5\",\"0\");";
             db.query(queryInsertCharacter,'', conn, function(res1) {
               var queryInsertEquipment = "INSERT INTO equipment VALUES ('',\""+result.insertId+"\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\");";
               db.query(queryInsertEquipment,'', conn, function(res2) {
