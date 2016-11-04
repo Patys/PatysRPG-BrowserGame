@@ -18,12 +18,14 @@ function getData(req) {
         var selectStats = 'SELECT * from characters WHERE `id_user` = ?';
         db.query(selectStats, [result[0].id], conn, function(res1) {
           if(res1[0]) {
-            return {
+            var stats = {
               strength: res1[0].strength,
               vitality: res1[0].vitality,
               inteligence: res1[0].inteligence,
               agility: res1[0].agility
             };
+            console.dir(stats);
+            return stats;
           }
           else {
             console.log('no data');
