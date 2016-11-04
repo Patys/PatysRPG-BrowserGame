@@ -8,7 +8,7 @@ var pool = mysql.createPool({
   });
 var db = require('./dbhelper');
 
-function getData(req) {
+function getData(req, next) {
   var query = 'SELECT id FROM `users` WHERE `token` = ? ';
   //WHERE users.name=" + post.username + " AND users.password=" + post.password + "";
   pool.getConnection(function(err, conn){
@@ -25,7 +25,7 @@ function getData(req) {
               agility: res1[0].agility
             };
             console.dir(stats);
-            return stats;
+            next(stats);
           }
           else {
             console.log('no data');
@@ -39,8 +39,7 @@ function getData(req) {
 }
 
 module.exports.get = function (req, res) {
-  var json_game_data = getData(req);
-  console.log(json_game_data);
-  res.render('game', json_game_data);
-
+  getData(req, function(stats) {
+    res.render('game', stats);
+  });
 }
