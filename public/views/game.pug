@@ -12,19 +12,29 @@ html
       .row
         .col-sm-2
           .menu
-            button.btn.btn-large.btn-primary.btn-block Postać
-            button.btn.btn-large.btn-primary.btn-block Misje
-            button.btn.btn-large.btn-primary.btn-block Sklep
-            button.btn.btn-large.btn-primary.btn-block Arena
-            button.btn.btn-large.btn-primary.btn-block Ranking
-            button.btn.btn-large.btn-primary.btn-block Wiadomości
-            button.btn.btn-large.btn-primary.btn-block Grupa
+            button.btn.btn-large.btn-primary.btn-block#menu-character Postać
+            button.btn.btn-large.btn-primary.btn-block#menu-mission Misje
+            button.btn.btn-large.btn-primary.btn-block#menu-shop Sklep
+            button.btn.btn-large.btn-primary.btn-block#menu-arena Arena
+            button.btn.btn-large.btn-primary.btn-block#menu-ranking Ranking
+            button.btn.btn-large.btn-primary.btn-block#menu-messages Wiadomości
+            button.btn.btn-large.btn-primary.btn-block#menu-group Grupa
         .col-sm-10
-          .panel.panel-primary
-            .panel-heading
-              h3.panel-title Postać
-            .panel-body
-              p Niesamowite informacje o twojej postaci
+          div#panel-character
+            .panel.panel-primary
+              .panel-heading
+                h3.panel-title Postać
+              .panel-body
+                p Info o postaci
+          div#panel-mission
+            .panel.panel-primary
+              .panel-heading
+                h3.panel-title Misje
+              .panel-body
+                p Info o misjach
     footer.footer
       p(style="text-align: center;").text-muted Patryk "patys_prog" Szczygło &copy; 2016
     include scripts.pug
+    | <script>
+    include ../game.js
+    | </style>
