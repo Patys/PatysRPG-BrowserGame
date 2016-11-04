@@ -3,6 +3,9 @@ html
     include link.pug
   body
     .container
+      .jumbotron
+        h1 PatysRPG
+    .container
       .row
         .col-md-2
           .menu
@@ -16,8 +19,6 @@ html
         .col-md-10
           .game
             h1 Tutaj gra itd
-      .row
-        .col-md-12
-          .footer
-            p Patryk "patys_prog" Szczygło &copy; 2016
+    footer.footer
+      p(style="text-align: center;").text-muted Patryk "patys_prog" Szczygło &copy; 2016
     include scripts.pug
