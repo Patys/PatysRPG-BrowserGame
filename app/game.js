@@ -25,7 +25,12 @@ function getData(req) {
               agility: res1[0].agility
             };
           }
+          else {
+            console.log('no data');
+          }
         });
+      } else {
+        console.log('wrong token');
       }
     });
   });
