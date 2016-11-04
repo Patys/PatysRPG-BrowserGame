@@ -21,7 +21,7 @@ module.exports.post = function (req, res) {
       res.json(err);
       // res.send('Bad user/passw');
     } else {
-      db.query(query, [post.username, post.email], function(rows) {
+      db.query(query, [post.username, post.email], conn, function(rows) {
         if(rows[0]) {
           res.send('Uzytkownik istnieje');
         } else {
