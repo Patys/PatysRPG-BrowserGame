@@ -15,6 +15,7 @@ function getData(req) {
     if(err) throw err;
     db.query(query, [req.session.user_id], conn, function(result) {
       if(result[0]) {
+        console.dir(result[0]);
         var selectStats = 'SELECT * from characters WHERE "id_user" = ?';
         db.query(selectStats, [result[0].id], conn, function(res1) {
           if(res1[0]) {
