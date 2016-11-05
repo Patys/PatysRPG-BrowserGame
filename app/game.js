@@ -33,7 +33,9 @@ function getData(req, next) {
                     mission_agility: res2[0].agility,
                     mission_money: res2[0].money,
                     mission_item: res2[0].id_item,
-                    mission_time: res2[0].time
+                    mission_time: res2[0].time,
+                    mission_name: res2[0].name,
+                    mission_description: res2[0].description
                   };
                   next(game_data);
               }

@@ -10,7 +10,9 @@ div#panel-mission
               a(role='button', data-toggle='collapse', data-parent='#missions', href='#mission-one-collapse', aria-expanded='true', aria-controls='mission-one-collapse')= mission_name
           #mission-one-collapse.panel-collapse.collapse.in(role='tabpanel', aria-labelledby='mission-one')
             .panel-body
-              p= mission_description
+              .row
+                .col-sm-12
+                  p= mission_description
               .row
                 .col-sm-8
                   p Siła &nbsp;
