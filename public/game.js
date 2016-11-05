@@ -34,11 +34,12 @@ var main = function() {
 }
 
 function drawCharacter() {
-  var c = document.getElementById("canvas");
+  var c = document.getElementById("myCanvas");
   var ctx = c.getContext("2d");
   var img = new Image();
   img.onload = function () {
-      ctx.drawImage(img, 300, 300);// this is line 14
+      ctx.drawImage(img, 0, 0);// this is line 14
+      console.log('wtf');
   };
   img.src = "https://github.com/Patys/PatysRPG-graphic/raw/master/Face/Completes/face1.png";
 }
