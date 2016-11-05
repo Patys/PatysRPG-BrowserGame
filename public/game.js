@@ -36,6 +36,7 @@ var main = function() {
 function drawCharacter() {
   var c = document.getElementById("myCanvas");
   var ctx = c.getContext("2d");
+  ctx.globalCompositeOperation='destination-over';
 
   var img_face1 = new Image();
   var img_faceFull1 = new Image();
