@@ -3,7 +3,7 @@ div#panel-mission
     .panel-heading
       h3.panel-title Misje
     .panel-body
-      #missions.panel-group(role='tablist', aria-multiselectable='true')
+      #missions.panel-group(role='tablist', aria-multiselectable='false')
         .panel.panel-default
           #mission-one.panel-heading(role='tab')
             h4.panel-title
@@ -48,3 +48,97 @@ div#panel-mission
                   p Czas &nbsp;
                 .col-sm-4
                   span.badge= mission_time
+
+
+
+        .panel.panel-default
+          #mission-two.panel-heading(role='tab')
+            h4.panel-title
+              a(role='button', data-toggle='collapse', data-parent='#missions', href='#mission-two-collapse', aria-expanded='false', aria-controls='mission-two-collapse')= mission_name2
+          #mission-two-collapse.panel-collapse.collapse(role='tabpanel', aria-labelledby='mission-two')
+            .panel-body
+              .row
+                .col-sm-12
+                  p= mission_description2
+              .row
+                .col-sm-8
+                  p Siła &nbsp;
+                .col-sm-4
+                  span.badge= mission_strength2
+              .row
+                .col-sm-8
+                  p Witalność &nbsp;
+                .col-sm-4
+                  span.badge= mission_vitality2
+              .row
+                .col-sm-8
+                  p Inteligencja &nbsp;
+                .col-sm-4
+                  span.badge= mission_inteligence2
+              .row
+                .col-sm-8
+                  p Zreczność &nbsp;
+                .col-sm-4
+                  span.badge= mission_agility2
+              .row
+                .col-sm-8
+                  p Pieniądze &nbsp;
+                .col-sm-4
+                  span.badge= mission_money2
+              .row
+                .col-sm-8
+                  p Przedmiot &nbsp;
+                .col-sm-4
+                  span.badge= mission_item2
+              .row
+                .col-sm-8
+                  p Czas &nbsp;
+                .col-sm-4
+                  span.badge= mission_time2
+
+
+
+        .panel.panel-default
+          #mission-three.panel-heading(role='tab')
+            h4.panel-title
+              a(role='button', data-toggle='collapse', data-parent='#missions', href='#mission-three-collapse', aria-expanded='false', aria-controls='mission-three-collapse')= mission_name3
+          #mission-three-collapse.panel-collapse.collapse(role='tabpanel', aria-labelledby='mission-three')
+            .panel-body
+              .row
+                .col-sm-12
+                  p= mission_description3
+              .row
+                .col-sm-8
+                  p Siła &nbsp;
+                .col-sm-4
+                  span.badge= mission_strength3
+              .row
+                .col-sm-8
+                  p Witalność &nbsp;
+                .col-sm-4
+                  span.badge= mission_vitality3
+              .row
+                .col-sm-8
+                  p Inteligencja &nbsp;
+                .col-sm-4
+                  span.badge= mission_inteligence3
+              .row
+                .col-sm-8
+                  p Zreczność &nbsp;
+                .col-sm-4
+                  span.badge= mission_agility3
+              .row
+                .col-sm-8
+                  p Pieniądze &nbsp;
+                .col-sm-4
+                  span.badge= mission_money3
+              .row
+                .col-sm-8
+                  p Przedmiot &nbsp;
+                .col-sm-4
+                  span.badge= mission_item3
+              .row
+                .col-sm-8
+                  p Czas &nbsp;
+                .col-sm-4
+                  span.badge= mission_time3

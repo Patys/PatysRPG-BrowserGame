@@ -35,7 +35,25 @@ function getData(req, next) {
                     mission_item: res2[0].id_item,
                     mission_time: res2[0].time,
                     mission_name: res2[0].name,
-                    mission_description: res2[0].description
+                    mission_description: res2[0].description,
+                    mission_strength2: res2[1].strength,
+                    mission_vitality2: res2[1].vitality,
+                    mission_inteligence2: res2[1].inteligence,
+                    mission_agility2: res2[1].agility,
+                    mission_money2: res2[1].money,
+                    mission_item2: res2[1].id_item,
+                    mission_time2: res2[1].time,
+                    mission_name2: res2[1].name,
+                    mission_description3: res2[1].description,
+                    mission_strength3: res2[2].strength,
+                    mission_vitality3: res2[2].vitality,
+                    mission_inteligence3: res2[2].inteligence,
+                    mission_agility3: res2[2].agility,
+                    mission_money3: res2[2].money,
+                    mission_item3: res2[2].id_item,
+                    mission_time3: res2[2].time,
+                    mission_name3: res2[2].name,
+                    mission_description3: res2[2].description
                   };
                   next(game_data);
               }
