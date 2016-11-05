@@ -38,8 +38,7 @@ function drawCharacter() {
   var ctx = c.getContext("2d");
   var img = new Image();
   img.onload = function () {
-      ctx.drawImage(img, 0, 0);// this is line 14
-      console.log('wtf');
+      ctx.drawImage(img, 0, 0);
   };
   img.src = "https://github.com/Patys/PatysRPG-graphic/raw/master/Face/Completes/face1.png";
 }
