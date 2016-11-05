@@ -36,11 +36,17 @@ var main = function() {
 function drawCharacter() {
   var c = document.getElementById("myCanvas");
   var ctx = c.getContext("2d");
-  var img = new Image();
-  img.onload = function () {
-      ctx.drawImage(img, 0, 0);
+  for(var i = 0; i < 14; i++) {
+    var img[i] = new Image();
+  }
+  img[0].onload = function () {
+      ctx.drawImage(img[0], 150, 100);
   };
-  img.src = "https://github.com/Patys/PatysRPG-graphic/raw/master/Face/Completes/face1.png";
+  img[1].onload = function () {
+      ctx.drawImage(img[1], 150, 20);
+  };
+  img[0].src = "https://github.com/Patys/PatysRPG-graphic/raw/master/Face/Completes/face1.png";
+  img[1].src = "https://github.com/Patys/PatysRPG-graphic/raw/master/Hair/Black/blackMan1.png";
 }
 
 $(document).ready(main);
