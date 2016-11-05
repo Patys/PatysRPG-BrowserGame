@@ -18,7 +18,7 @@ function getData(req, next) {
         var selectStats = 'SELECT * from characters WHERE `id_user` = ?';
         db.query(selectStats, [result[0].id], conn, function(res1) {
           if(res1[0]) {
-            var queryMissions = 'SELECT * FROM missions ORDER BY RAND() LIMIT 3';
+            var queryMissions = 'SELECT * FROM missions ORDER BY RAND() LIMIT 3'; // to jest wolne :c
             db.query(queryMissions, '', conn, function(res2) {
               if(res2[0]) {
                 console.dir(res2);
@@ -45,7 +45,7 @@ function getData(req, next) {
                     mission_item2: res2[1].id_item,
                     mission_time2: res2[1].time,
                     mission_name2: res2[1].name,
-                    mission_description3: res2[1].description,
+                    mission_description2: res2[1].description,
                     mission_strength3: res2[2].strength,
                     mission_vitality3: res2[2].vitality,
                     mission_inteligence3: res2[2].inteligence,
