@@ -17,3 +17,9 @@ h1.title {
   background-color: #FFEF45;
   color: #000;
 }
+
+canvas {
+  background-color: white; 
+  width: 100%;
+  height: auto;
+}

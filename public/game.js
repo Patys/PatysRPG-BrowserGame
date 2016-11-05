@@ -29,7 +29,15 @@ var main = function() {
     $('div[id^="panel-"]').hide();
     $('div[id^="panel-group"]').show();
   });
+  drawCharacter();
+
 }
 
+function drawCharacter() {
+  var c = document.getElementById("canvas");
+  var ctx = c.getContext("2d");
+  var img = document.getElementById("face1");
+  ctx.drawImage(img,10,10);
+}
 
 $(document).ready(main);
