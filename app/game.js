@@ -21,7 +21,6 @@ function getData(req, next) {
             var queryMissions = 'SELECT * FROM missions ORDER BY RAND() LIMIT 3'; // to jest wolne :c
             db.query(queryMissions, '', conn, function(res2) {
               if(res2[0]) {
-                console.dir(res2);
                   var game_data = {
                     strength: res1[0].strength,
                     vitality: res1[0].vitality,

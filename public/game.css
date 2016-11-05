@@ -6,6 +6,12 @@ body, html{
  	font-family: 'Oxygen', sans-serif;
 }
 
+h1.title {
+	font-size: 50px;
+	font-family: 'Passion One', cursive;
+	font-weight: 400;
+}
+
 .jumbotron {
   text-align: center;
   background-color: #FFEF45;
