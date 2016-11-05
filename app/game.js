@@ -18,7 +18,7 @@ function getData(req, next) {
         var selectStats = 'SELECT * from characters WHERE `id_user` = ?';
         db.query(selectStats, [result[0].id], conn, function(res1) {
           if(res1[0]) {
-            var queryMissions = 'SELECT * FROM missions AS r1 JOIN (SELECT CEIL(RAND() * (SELECT MAX(id) FROM missions)) AS id) AS r2 WHERE r1.id >= r2.id ORDER BY r1.id ASC LIMIT 3';
+            var queryMissions = 'SELECT * FROM missions ORDER BY RAND() LIMIT 3';
             db.query(queryMissions, '', conn, function(res2) {
               if(res2[0]) {
                 console.dir(res2);
