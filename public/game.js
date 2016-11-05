@@ -36,9 +36,10 @@ var main = function() {
 function drawCharacter() {
   var c = document.getElementById("myCanvas");
   var ctx = c.getContext("2d");
-  for(var i = 0; i < 14; i++) {
-    var img[i] = new Image();
-  }
+
+  var img[0] = new Image();
+  var img[1] = new Image();
+
   img[0].onload = function () {
       ctx.drawImage(img[0], 150, 100);
   };
