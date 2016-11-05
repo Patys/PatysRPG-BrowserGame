@@ -36,7 +36,11 @@ var main = function() {
 function drawCharacter() {
   var c = document.getElementById("canvas");
   var ctx = c.getContext("2d");
-  var img = document.getElementById("face1");
+  var img = new Image();
+  img.onload = function () {
+      this._canvas.drawImage(img, 300, 300);// this is line 14
+  };
+  img.src = "https://github.com/Patys/PatysRPG-graphic/raw/master/Face/Completes/face1.png";
   ctx.drawImage(img,10,10);
 }
 
