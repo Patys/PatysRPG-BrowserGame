@@ -22,7 +22,8 @@ function getData(req, next) {
               strength: res1[0].strength,
               vitality: res1[0].vitality,
               inteligence: res1[0].inteligence,
-              agility: res1[0].agility
+              agility: res1[0].agility,
+              money: res1[0].cash
             };
             next(stats);
           }
