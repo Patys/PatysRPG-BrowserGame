@@ -24,7 +24,6 @@ function getData(req, next) {
               inteligence: res1[0].inteligence,
               agility: res1[0].agility
             };
-            console.dir(stats);
             next(stats);
           }
           else {
