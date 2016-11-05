@@ -24,12 +24,7 @@ html
             a(href="/logout" style="margin-top: 35px;").btn.btn-large.btn-info.btn-block#menu-logout Wyloguj
         .col-sm-10
           include game/character.pug
-          div#panel-mission
-            .panel.panel-primary
-              .panel-heading
-                h3.panel-title Misje
-              .panel-body
-                p Info o misjach
+          include game/missions.pug
           div#panel-shop
             .panel.panel-primary
               .panel-heading

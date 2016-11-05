@@ -18,14 +18,26 @@ function getData(req, next) {
         var selectStats = 'SELECT * from characters WHERE `id_user` = ?';
         db.query(selectStats, [result[0].id], conn, function(res1) {
           if(res1[0]) {
-            var stats = {
-              strength: res1[0].strength,
-              vitality: res1[0].vitality,
-              inteligence: res1[0].inteligence,
-              agility: res1[0].agility,
-              money: res1[0].cash
-            };
-            next(stats);
+            var queryMissions = 'SELECT * from missions';
+            db.query(queryMissions, '', conn, function(res2) {
+              if(res2[0]) {
+                  var game_data = {
+                    strength: res1[0].strength,
+                    vitality: res1[0].vitality,
+                    inteligence: res1[0].inteligence,
+                    agility: res1[0].agility,
+                    money: res1[0].cash,
+                    mission_strength: res2[0].strength,
+                    mission_vitality: res2[0].vitality,
+                    mission_inteligence: res2[0].inteligence,
+                    mission_agility: res2[0].agility,
+                    mission_money: res2[0].money,
+                    mission_item: res2[0].id_item,
+                    mission_time: res2[0].time
+                  };
+                  next(game_data);
+              }
+            });
           }
           else {
             console.log('no data');
@@ -39,7 +51,7 @@ function getData(req, next) {
 }
 
 module.exports.get = function (req, res) {
-  getData(req, function(stats) {
-    res.render('game', stats);
+  getData(req, function(game_data) {
+    res.render('game', game_data);
   });
 }
