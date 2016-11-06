@@ -2,28 +2,28 @@ div#panel-ranking
   .panel.panel-primary
     .panel-heading
       h3.panel-title Ranking
-  .panel-body
-    div
-      .row
-        .col-sm-4
-          p Nazwa
-        .col-sm-2
-          p Siła
-        .col-sm-2
-          p Witalność
-        .col-sm-2
-          p Inteligencja
-        .col-sm-2
-          p Zreczność
-      each rank in ranking
+    .panel-body
+      div
         .row
           .col-sm-4
-            p= rank.name
+            p Nazwa
           .col-sm-2
-            p= rank.strength
+            p Siła
           .col-sm-2
-            p= rank.vitality
+            p Witalność
           .col-sm-2
-            p= rank.inteligence
+            p Inteligencja
           .col-sm-2
-            p= rank.agility
+            p Zreczność
+        each rank in ranking
+          .row
+            .col-sm-4
+              p= rank.name
+            .col-sm-2
+              p= rank.strength
+            .col-sm-2
+              p= rank.vitality
+            .col-sm-2
+              p= rank.inteligence
+            .col-sm-2
+              p= rank.agility
