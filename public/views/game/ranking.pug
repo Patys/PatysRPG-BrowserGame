@@ -4,7 +4,7 @@ div#panel-ranking
       h3.panel-title Ranking
     .panel-body
       div
-        .row
+        .row(style="border-bottom: 1px solid black;")
           .col-sm-4
             p Nazwa
           .col-sm-2
@@ -16,7 +16,7 @@ div#panel-ranking
           .col-sm-2
             p Zreczność
         each rank in ranking
-          .row
+          .row(style="border-bottom: 1px solid black;")
             .col-sm-4
               p= rank.name
             .col-sm-2
