@@ -21,8 +21,8 @@
 
 body {
   height: 100%;
-  background: linear-gradient(312deg, #ff0000, #ede300, #fa964b, #fae34b, #fa8282);
-  background-size: 1000% 1000%;
+  background: linear-gradient(312deg, #f94a4a, #ece541, #fa964b, #f6fa4b);
+  background-size: 800% 800%;
 
   -webkit-animation: background-moving 24s ease infinite;
   -moz-animation: background-moving 24s ease infinite;
