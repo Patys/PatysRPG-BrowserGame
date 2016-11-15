@@ -24,9 +24,12 @@ module.exports.arena = function (req, res) {
 }
 
 module.exports.character = function (req, res) {
-  getData(req, function(game_data) {
-    game_data.currentUrl = '/character';
-    res.render('game', game_data);
+  pool.getConnection(function(err, conn){
+    if(err) throw err;
+    data.getDataCharacter(conn, req, function(game_data) {
+      game_data.currentUrl = '/character';
+      res.render('game', game_data);
+    });
   });
 }
 

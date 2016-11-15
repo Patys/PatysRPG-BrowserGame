@@ -1,5 +1,26 @@
 var db = require('./dbhelper');
 
+module.exports.getDataCharacter = function(conn, req, next) {
+    var query = 'SELECT id FROM `users` WHERE `token` = ? ';
+    db.query(query, [req.session.user_id], conn, function(user) {
+      if(user) {
+        var selectUserCharacter = 'SELECT * from characters WHERE `id_user` = ?';
+        db.query(selectStats, [user[0].id], conn, function(character) {
+          if(character) {
+            var game_data = {
+              strength: res1[0].strength,
+              vitality: res1[0].vitality,
+              inteligence: res1[0].inteligence,
+              agility: res1[0].agility,
+              money: res1[0].cash
+            };
+            next(game_data);
+          }
+        });
+      }
+    });
+}
+
 module.exports.get = function(conn, req, next) {
   var query = 'SELECT id FROM `users` WHERE `token` = ? ';
   db.query(query, [req.session.user_id], conn, function(result) {
