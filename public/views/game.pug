@@ -25,10 +25,13 @@ html
         .col-sm-10
           p=currentUrl
           if currentUrl === '/character'
+            p wtf1
             include game/character.pug
           else if currentUrl === '/missions'
+            p wtf2
             include game/missions.pug
           else if currentUrl === '/shop'
+            p wtf3
             include game/shop.pug
           else if currentUrl === '/arena'
             include game/arena.pug
