@@ -23,19 +23,19 @@ html
             a(href="/group").btn.btn-large.btn-primary.btn-block#menu-group Grupa
             a(href="/logout" style="margin-top: 35px;").btn.btn-large.btn-info.btn-block#menu-logout Wyloguj
         .col-sm-10
-          if(currentUrl === '/character')
+          if currentUrl === '/character'
             include game/character.pug
-          if(currentUrl === '/missions')
+          if currentUrl === '/missions'
             include game/missions.pug
-          if(currentUrl === '/shop')
+          if currentUrl === '/shop'
             include game/shop.pug
-          if(currentUrl === '/arena')
+          if currentUrl === '/arena'
             include game/arena.pug
-          if(currentUrl === '/ranking')
+          if currentUrl === '/ranking'
             include game/ranking.pug
-          if(currentUrl === '/messages')
+          if currentUrl === '/messages'
             include game/messages.pug
-          if(currentUrl === '/group')
+          if currentUrl === '/group'
             include game/group.pug
     footer.footer
       p(style="text-align: center;").text-muted Patryk "patys_prog" Szczygło &copy; 2016
