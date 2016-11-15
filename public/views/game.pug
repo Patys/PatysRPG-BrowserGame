@@ -23,15 +23,11 @@ html
             a(href="/group").btn.btn-large.btn-primary.btn-block#menu-group Grupa
             a(href="/logout" style="margin-top: 35px;").btn.btn-large.btn-info.btn-block#menu-logout Wyloguj
         .col-sm-10
-          p=currentUrl
           if currentUrl === '/character'
-            p wtf1
             include game/character.pug
           else if currentUrl === '/missions'
-            p wtf2
             include game/missions.pug
           else if currentUrl === '/shop'
-            p wtf3
             include game/shop.pug
           else if currentUrl === '/arena'
             include game/arena.pug
