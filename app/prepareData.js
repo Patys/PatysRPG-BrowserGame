@@ -5,14 +5,14 @@ module.exports.getDataCharacter = function(conn, req, next) {
     db.query(query, [req.session.user_id], conn, function(user) {
       if(user) {
         var selectUserCharacter = 'SELECT * from characters WHERE `id_user` = ?';
-        db.query(selectStats, [user[0].id], conn, function(character) {
+        db.query(selectStats, [user.id], conn, function(character) {
           if(character) {
             var game_data = {
-              strength: res1[0].strength,
-              vitality: res1[0].vitality,
-              inteligence: res1[0].inteligence,
-              agility: res1[0].agility,
-              money: res1[0].cash
+              strength: character.strength,
+              vitality: character.vitality,
+              inteligence: character.inteligence,
+              agility: character.agility,
+              money: character.cash
             };
             next(game_data);
           }
