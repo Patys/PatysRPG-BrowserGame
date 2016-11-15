@@ -12,15 +12,15 @@ html
       .row
         .col-sm-2
           .menu
-            button.btn.btn-large.btn-primary.btn-block#menu-character Postać
-            button.btn.btn-large.btn-primary.btn-block#menu-mission Misje
-            button.btn.btn-large.btn-primary.btn-block#menu-shop Sklep
-            button.btn.btn-large.btn-primary.btn-block#menu-arena Arena
-            button.btn.btn-large.btn-primary.btn-block#menu-ranking Ranking
-            button.btn.btn-large.btn-primary.btn-block#menu-messages
+            a(href="/character").btn.btn-large.btn-primary.btn-block#menu-character Postać
+            a(href="/missions").btn.btn-large.btn-primary.btn-block#menu-mission Misje
+            a(href="/shop").btn.btn-large.btn-primary.btn-block#menu-shop Sklep
+            a(href="/arena").btn.btn-large.btn-primary.btn-block#menu-arena Arena
+            a(href="/ranking").btn.btn-large.btn-primary.btn-block#menu-ranking Ranking
+            a(href="/messages").btn.btn-large.btn-primary.btn-block#menu-messages
               | Wiadomości &nbsp;
               span.badge 3
-            button.btn.btn-large.btn-primary.btn-block#menu-group Grupa
+            a(href="/group").btn.btn-large.btn-primary.btn-block#menu-group Grupa
             a(href="/logout" style="margin-top: 35px;").btn.btn-large.btn-info.btn-block#menu-logout Wyloguj
         .col-sm-10
           if(currentUrl === '/character')

@@ -8,7 +8,7 @@ var pool = mysql.createPool({
   });
 
 module.exports.get = function (req, res) {
-  res.render('login', { title: 'Logowanie', message: 'Logujemy sie'});
+  res.render('login');
 }
 
 module.exports.post = function (req, res) {
@@ -27,7 +27,7 @@ module.exports.post = function (req, res) {
         } else {
           if(rows[0]) {
             req.session.user_id = rows[0].token;
-            res.redirect('/game');
+            res.redirect('/character');
           }else {
             res.send('Bad user/passw');
           }
