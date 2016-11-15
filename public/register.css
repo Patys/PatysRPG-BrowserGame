@@ -8,8 +8,34 @@
 
 body, html{
   height: 100%;
- 	background-repeat: no-repeat;
- 	background-color: #FFFFA8;
+  background: linear-gradient(312deg, #ff0000, #ede300, #fa964b, #fae34b, #fa8282);
+  background-size: 1000% 1000%;
+
+  -webkit-animation: background-moving 24s ease infinite;
+  -moz-animation: background-moving 24s ease infinite;
+  -o-animation: background-moving 24s ease infinite;
+  animation: background-moving 24s ease infinite;
+
+  @-webkit-keyframes background-moving {
+      0%{background-position:10% 0%}
+      50%{background-position:91% 100%}
+      100%{background-position:10% 0%}
+  }
+  @-moz-keyframes background-moving {
+      0%{background-position:10% 0%}
+      50%{background-position:91% 100%}
+      100%{background-position:10% 0%}
+  }
+  @-o-keyframes background-moving {
+      0%{background-position:10% 0%}
+      50%{background-position:91% 100%}
+      100%{background-position:10% 0%}
+  }
+  @keyframes background-moving {
+      0%{background-position:10% 0%}
+      50%{background-position:91% 100%}
+      100%{background-position:10% 0%}
+  }
  	font-family: 'Oxygen', sans-serif;
 }
 
