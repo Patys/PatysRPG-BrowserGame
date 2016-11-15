@@ -4,7 +4,18 @@
 - sklep
 - walki pvp
 - wiadomosci
-
+- odzielne routy
+- losowanie misji na podstawie typu (np do sily, do inteligencji, do zrecznosci)
+- przyjmowanie misji i ich konczenie
+- zapisy na arenie do walk
+- symulacja walk
+- rozwiazanie walk i odebranie nagrod
+- podsumowanie rankingu w pkt
+- dodawanie znajomych
+- wysylanie i odbieranie wiadomosci
+- kupowanie przedmiotow
+- zakladanie przedmiotow
+- sprzedaz przedmiotow
 
 Statystyki:
  - sila
