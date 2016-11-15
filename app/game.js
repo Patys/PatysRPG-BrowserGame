@@ -16,8 +16,51 @@ function getData(req, next) {
   });
 }
 
-module.exports.get = function (req, res) {
+module.exports.arena = function (req, res) {
   getData(req, function(game_data) {
+    game_data.currentUrl = '/arena';
+    res.render('game', game_data);
+  });
+}
+
+module.exports.character = function (req, res) {
+  getData(req, function(game_data) {
+    game_data.currentUrl = '/character';
+    res.render('game', game_data);
+  });
+}
+
+module.exports.group = function (req, res) {
+  getData(req, function(game_data) {
+    game_data.currentUrl = '/group';
+    res.render('game', game_data);
+  });
+}
+
+module.exports.messages = function (req, res) {
+  getData(req, function(game_data) {
+    game_data.currentUrl = '/messages';
+    res.render('game', game_data);
+  });
+}
+
+module.exports.missions = function (req, res) {
+  getData(req, function(game_data) {
+    game_data.currentUrl = '/missions';
+    res.render('game', game_data);
+  });
+}
+
+module.exports.ranking = function (req, res) {
+  getData(req, function(game_data) {
+    game_data.currentUrl = '/ranking';
+    res.render('game', game_data);
+  });
+}
+
+module.exports.shop = function (req, res) {
+  getData(req, function(game_data) {
+    game_data.currentUrl = '/shop';
     res.render('game', game_data);
   });
 }

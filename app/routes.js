@@ -31,7 +31,14 @@ routes.get('/login', login.get);
 routes.post('/login', login.post);
 routes.get('/register', register.get);
 routes.post('/register', register.post);
-routes.get('/game', auth.check, game.get);
+routes.get('/character', auth.check, game.character);
+routes.get('/missions', auth.check, game.missions);
+routes.get('/shop', auth.check, game.shop);
+routes.get('/arena', auth.check, game.arena);
+routes.get('/ranking', auth.check, game.ranking);
+routes.get('/messages', auth.check, game.messages);
+routes.get('/group', auth.check, game.group);
+
 routes.get('/logout', function (req, res) {
   delete req.session.user_id;
   res.redirect('/login');
