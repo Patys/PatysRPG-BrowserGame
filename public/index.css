@@ -38,6 +38,8 @@ h1.title {
 }
 
 .jumbotron {
+  background-color: #FFE573;
+  height: 500px;
   text-align: center;
     /* shadows and rounded borders */
     -moz-border-radius: 2px;
@@ -63,9 +65,9 @@ h1.title {
 
 .content {
   position: absolute;
-  top: 20%;
-  left: 20%;
-  transform: translate(-20%, -20%);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   font-size: 35px;
   line-height: 40px;
   font-family: 'Lato', sans-serif;
