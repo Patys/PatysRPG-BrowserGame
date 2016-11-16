@@ -1,0 +1,59 @@
+@-webkit-keyframes background-moving {
+    0%{background-position:10% 0%}
+    50%{background-position:91% 100%}
+    100%{background-position:10% 0%}
+}
+@-moz-keyframes background-moving {
+    0%{background-position:10% 0%}
+    50%{background-position:91% 100%}
+    100%{background-position:10% 0%}
+}
+@-o-keyframes background-moving {
+    0%{background-position:10% 0%}
+    50%{background-position:91% 100%}
+    100%{background-position:10% 0%}
+}
+@keyframes background-moving {
+    0%{background-position:10% 0%}
+    50%{background-position:91% 100%}
+    100%{background-position:10% 0%}
+}
+
+body {
+  height: 100%;
+  background: linear-gradient(312deg, #f94a4a, #ece541, #fa964b, #f6fa4b);
+  background-size: 800% 800%;
+
+  -webkit-animation: background-moving 24s ease infinite;
+  -moz-animation: background-moving 24s ease infinite;
+  -o-animation: background-moving 24s ease infinite;
+  animation: background-moving 24s ease infinite;
+ 	font-family: 'Oxygen', sans-serif;
+}
+
+h1.title {
+	font-size: 50px;
+	font-family: 'Passion One', cursive;
+	font-weight: 400;
+}
+
+.header {
+  text-align: center;
+}
+
+p.header {
+  font-size: 30px;
+  font-weight: 200;
+}
+
+.box {
+ 	background-color: #fff;
+    /* shadows and rounded borders */
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+
+}
