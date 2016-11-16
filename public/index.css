@@ -61,7 +61,7 @@ h1.title {
 }
 
 
-.content.jumbotron {
+.content {
   position: absolute;
   top: 20%;
   left: 20%;
@@ -74,7 +74,7 @@ h1.title {
   overflow:hidden;
 }
 
-.visible.jumbotron {
+.visible {
   font-weight:600;
   overflow:hidden;
   height:40px;
@@ -112,7 +112,7 @@ p.jumbotron {
   margin:0;
 }
 
-ul.jumbotron {
+ul {
   margin-top:0;
   padding-left:110px;
   text-align:left;
@@ -125,7 +125,7 @@ ul.jumbotron {
   animation-iteration-count: infinite;
 }
 
-ul.jumbotron li {
+ul li {
   line-height:40px;
   margin:0;
 }
