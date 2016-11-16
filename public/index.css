@@ -61,11 +61,11 @@ h1.title {
 }
 
 
-.content {
+.content.jumbotron {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: 20%;
+  left: 20%;
+  transform: translate(-20%, -20%);
   font-size: 35px;
   line-height: 40px;
   font-family: 'Lato', sans-serif;
@@ -74,7 +74,7 @@ h1.title {
   overflow:hidden;
 }
 
-.visible {
+.visible.jumbotron {
   font-weight:600;
   overflow:hidden;
   height:40px;
@@ -106,13 +106,13 @@ h1.title {
   }
 }
 
-p {
+p.jumbotron {
   display:inline;
   float:left;
   margin:0;
 }
 
-ul {
+ul.jumbotron {
   margin-top:0;
   padding-left:110px;
   text-align:left;
@@ -125,7 +125,7 @@ ul {
   animation-iteration-count: infinite;
 }
 
-ul li {
+ul.jumbotron li {
   line-height:40px;
   margin:0;
 }
