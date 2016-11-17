@@ -15,19 +15,17 @@ html
         .main-login.main-center
           form.form-horizontal(method='post', action='/login')
             .form-group
-              label.cols-sm-2.control-label(for='username') Nazwa
-              .cols-sm-10
-                .input-group
-                  span.input-group-addon
-                    i.fa.fa-users.fa(aria-hidden='true')
-                  input#username.form-control(type='text', name='username', placeholder='Wpisz nazwe')
+              .wrap.center
+                .wrap-label
+                  label(for='username') Nazwa
+                  p.iconicfill-pen-alt2
+                input#username(type='text', name='username', placeholder='Wpisz nazwe')
             .form-group
-              label.cols-sm-2.control-label(for='password') Hasło
-              .cols-sm-10
-                .input-group
-                  span.input-group-addon
-                    i.fa.fa-lock.fa-lg(aria-hidden='true')
-                  input#password.form-control(type='password', name='password', placeholder='Wpisz hasło')
+              .wrap.center
+                .wrap-label
+                  label(for='password') Hasło
+                  p.iconicfill-pen-alt2
+                input#password(type='password', name='password', placeholder='Wpisz hasło')
             .form-group
               button.btn.btn-primary.btn-lg.btn-block.login-button(type='submit') Logowanie
             .login-register
