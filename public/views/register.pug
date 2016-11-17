@@ -18,23 +18,17 @@ html
               .wrap-label
                 label(for='email') Email
                 p.iconicfill-pen-alt2
-              input#email.form-control(type='text', name='email', placeholder='Wpisz Email')
+              input#email(type='text', name='email', placeholder='Wpisz Email')
             .wrap.center
               .wrap-label
                 label(for='username') Nazwa
                 p.iconicfill-pen-alt2
-              .input-group
-                span.input-group-addon
-                  i.fa.fa-users.fa(aria-hidden='true')
-                  input#username(type='text', name='username', placeholder='Wpisz nazwe')
+              input#username(type='text', name='username', placeholder='Wpisz nazwe')
             .wrap.center
               .wrap-label
                 label(for='password') Hasło
                 p.iconicfill-pen-alt2
-              .input-group
-                span.input-group-addon
-                  i.fa.fa-lock.fa-lg(aria-hidden='true')
-                  input#password(type='password', name='password', placeholder='Wpisz hasło')
+              input#password(type='password', name='password', placeholder='Wpisz hasło')
             .form-group
               button.btn.btn-primary.btn-lg.btn-block.login-button(type='submit') Rejestruj
             .login-register
