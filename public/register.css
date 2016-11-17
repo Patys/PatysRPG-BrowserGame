@@ -89,7 +89,6 @@ input::-webkit-input-placeholder {
 	text-align: center;
 }
 
-@import url(http://weloveiconfonts.com/api/?family=iconicfill);
 /* iconicfill */
 [class*="iconicfill-"]:before {
   font-family: 'IconicFill', sans-serif;
