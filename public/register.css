@@ -90,7 +90,6 @@ input::-webkit-input-placeholder {
 }
 
 @import url(http://weloveiconfonts.com/api/?family=iconicfill);
-@import url(http://fonts.googleapis.com/css?family=Arvo);
 /* iconicfill */
 [class*="iconicfill-"]:before {
   font-family: 'IconicFill', sans-serif;
@@ -107,7 +106,7 @@ input{
   display:block;
     width: 300px;
     padding: 15px 0 15px 12px;
-    font-family: "Arvo";
+   	font-family: 'Oxygen', sans-serif;
     font-weight: 400;
     color: #377D6A;
     background: rgba(0,0,0,0.3);
@@ -134,7 +133,7 @@ label{
     margin: 0;
     padding: 0;
     color:#fff;
-    font-family: 'Arvo';
+   	font-family: 'Oxygen', sans-serif;
     font-size: 16px;
 }
 
