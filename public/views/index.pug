@@ -8,21 +8,11 @@ html
     .container
      .jumbotron
         h1.title PatysRPG
-        .content
-          .visible
-            p
-              Witaj
-            ul
-              li graczu!
-              li mistrzu!
-              li bohaterze!
-              li człowieku!
+        a(href="login" class="btn btn-large btn-primary").hvr-underline-from-left Logowanie
+        a(href="register" class="btn btn-large btn-warning").hvr-underline-from-left Rejestracja
     .container.box
       h2 Prace nad grą są rozpoczęte.
       p Zostało udostępnione wstępne logowanie i rejestracja do gry.
       p Wszelkie niedoskonałości muszą zostać wybaczone. Przynajmniej chwilowo.
-    .container(style="text-align: center;")
-      a(href="login" class="btn btn-large btn-primary") Logowanie
-      a(href="register" class="btn btn-large btn-warning") Rejestracja
 
     include scripts.pug
