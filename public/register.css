@@ -61,7 +61,7 @@ input::-webkit-input-placeholder {
 }
 
 .main-login{
- 	background-color: #fff;
+ 	background-color: none;
     /* shadows and rounded borders */
     -moz-border-radius: 2px;
     -webkit-border-radius: 2px;
