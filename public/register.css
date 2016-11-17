@@ -163,3 +163,7 @@ label{
     from{transform:translateX(-4px) rotate(6deg);}
     to{transform:translateX(4px) rotate(-3deg);}
 }
+
+.form-group  {
+  padding: 15px;
+}
