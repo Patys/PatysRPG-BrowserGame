@@ -76,8 +76,6 @@ input::-webkit-input-placeholder {
  	margin-top: 30px;
  	margin: 0 auto;
  	max-width: 330px;
-    padding: 40px 40px;
-
 }
 
 .login-button{
@@ -96,8 +94,8 @@ input::-webkit-input-placeholder {
 
 .wrap{width:280px;}
 .center{
- /*top:50%;
- transform:translateY(-50%);*/
+ top:50%;
+ transform:translateY(-50%);
  position:relative;
  margin:auto;}
 

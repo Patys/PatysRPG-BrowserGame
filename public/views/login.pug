@@ -14,20 +14,17 @@ html
             hr
         .main-login.main-center
           form.form-horizontal(method='post', action='/login')
-            .form-group
-              .wrap.center
-                .wrap-label
-                  label(for='username') Nazwa
-                  p.iconicfill-pen-alt2
-                input#username(type='text', name='username', placeholder='Wpisz nazwe')
-            .form-group
-              .wrap.center
-                .wrap-label
-                  label(for='password') Hasło
-                  p.iconicfill-pen-alt2
-                input#password(type='password', name='password', placeholder='Wpisz hasło')
-            .form-group
-              button.btn.btn-primary.btn-lg.btn-block.login-button(type='submit') Logowanie
+            .wrap.center
+              .wrap-label
+                label(for='username') Nazwa
+                p.iconicfill-pen-alt2
+              input#username(type='text', name='username', placeholder='Wpisz nazwe')
+            .wrap.center
+              .wrap-label
+                label(for='password') Hasło
+                p.iconicfill-pen-alt2
+              input#password(type='password', name='password', placeholder='Wpisz hasło')
+            button.btn.btn-primary.btn-lg.btn-block.login-button(type='submit') Logowanie
             .login-register
               a(href='/register') Rejestracja
 
