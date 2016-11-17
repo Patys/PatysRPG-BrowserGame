@@ -104,7 +104,7 @@ input::-webkit-input-placeholder {
 input{
   display:block;
     width: 300px;
-    padding: 15px 0 15px 12px;
+    padding: 15px 12px 15px 12px;
    	font-family: 'Oxygen', sans-serif;
     font-weight: 400;
     color: #377D6A;
@@ -160,8 +160,4 @@ label{
 @keyframes move-pen{
     from{transform:translateX(-4px) rotate(6deg);}
     to{transform:translateX(4px) rotate(-3deg);}
-}
-
-.form-group  {
-  padding: 15px;
 }
