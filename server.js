@@ -21,22 +21,7 @@ app.set('trust proxy', 1);
 app.use('/', routes);
 
 app.use(function(req, res, next){
-  res.status(404);
-
-  // respond with html page
-  if (req.accepts('html')) {
-    res.render('ups');
-    return;
-  }
-
-  // respond with json
-  if (req.accepts('json')) {
-    res.send({ error: 'Nie znaleziono' });
-    return;
-  }
-
-  // default to plain-text. send()
-  res.type('txt').send('Nie znaleziono');
+  res.render('ups');
 });
 
 ///////////////////////
