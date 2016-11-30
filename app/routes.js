@@ -19,6 +19,7 @@ var index = require('./index');
 var login = require('./login');
 var game = require('./game');
 var register = require('./register');
+var error = require('./error');
 
 
 routes.use(function(req, res, next) {
