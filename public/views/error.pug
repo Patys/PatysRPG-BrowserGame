@@ -12,7 +12,7 @@ html
     .container
         form.form-horizontal(method='post', action='/error')
           .form-group
-            label.col-sm-2.control-label(for="email") Rmail
+            label.col-sm-2.control-label(for="email") Email
             .col-sm-10
               input#email.form-control(type='email', name='email', placeholder='Wpisz Email')
           .form-group
@@ -21,6 +21,6 @@ html
               textarea#error.form-control(name='error', placeholder='Opis błędu')
           .form-group
             .col-sm-offset-2.col-sm-10
-              button.btn.btn-primary(type='submit') Zgłoś błąd
+              button.btn.btn-danger(type='submit') Wyślij
 
     include scripts.pug
