@@ -38,6 +38,11 @@ routes.get('/arena', auth.check, game.arena);
 routes.get('/ranking', auth.check, game.ranking);
 routes.get('/messages', auth.check, game.messages);
 routes.get('/group', auth.check, game.group);
+routes.get('/error', error.get);
+routes.post('/error', error.post);
+
+routes.get('/thanks', function(res,req){res.render('thanks')});
+routes.get('/ups', function(res,req){res.render('ups')});
 
 routes.get('/logout', function (req, res) {
   delete req.session.user_id;

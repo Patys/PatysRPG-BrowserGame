@@ -1,0 +1,25 @@
+html
+  head
+    include link.pug
+    | <style type="text/css">
+    include ../index.css
+
+    .jumbotron {
+      position: absolute;
+      top:0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+
+      margin: auto;
+    }
+    | </style>
+  body
+    .container
+     .jumbotron
+        h1.title PatysRPG
+        p Dziękuję :D
+        p Zapraszam z powrotem do gry
+        a(href="/character")
+
+    include scripts.pug

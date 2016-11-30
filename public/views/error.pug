@@ -1,0 +1,18 @@
+html
+  head
+    include link.pug
+    | <style type="text/css">
+    include ../index.css
+    | </style>
+  body
+    .container
+     .jumbotron
+        h1.title PatysRPG
+        p Tutaj możesz zgłosić znaleziony błąd.
+    .container.box
+        form.form-horizontal(method='post', action='/error')
+          input#email(type='text', name='email', placeholder='Wpisz Email')
+          textarea(name='error')
+          button.btn.btn-primary.btn-lg.btn-block.login-button(type='submit') Zgłoś błąd
+
+    include scripts.pug
