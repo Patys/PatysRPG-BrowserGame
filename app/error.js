@@ -14,13 +14,13 @@ module.exports.post = function (req, res) {
       ('00' + date.getUTCMinutes()).slice(-2) + ':' +
       ('00' + date.getUTCSeconds()).slice(-2);
 
-  var userData = "Opis: " + post.error + " od: " + post.email + " data: " + date.toString();
+  var userData = "Opis: " + post.error + " \n\nod: " + post.email + " data: " + date.toString();
 
   var errorReport = {
    "attachments":[
       {
-         "fallback":"New error",
-         "pretext":"New error",
+         "fallback":"Zgłoszono nowy błąd",
+         "pretext":"Zgłoszono nowy błąd",
          "color":"#D00000",
          "fields":[
             {
