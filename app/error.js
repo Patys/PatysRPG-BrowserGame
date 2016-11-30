@@ -14,7 +14,7 @@ module.exports.post = function (req, res) {
       ('00' + date.getUTCMinutes()).slice(-2) + ':' +
       ('00' + date.getUTCSeconds()).slice(-2);
 
-  var userData = "Opis: " + post.error + " od: " + post.email + " data: " + data.toString();
+  var userData = "Opis: " + post.error + " od: " + post.email + " data: " + date.toString();
 
   var errorReport = {
    "attachments":[
