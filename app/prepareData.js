@@ -1,6 +1,6 @@
 var db = require('./dbhelper');
 
-module.exports.getMessageCount(conn, req, next) {
+module.exports.getMessageCount= function(conn, req, next) {
   var query = 'SELECT id FROM `users` WHERE `token` = ? ';
   db.query(query, [req.session.user_id], conn, function(user) {
     if(user) {
