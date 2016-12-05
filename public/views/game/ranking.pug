@@ -27,8 +27,9 @@ div#panel-ranking
               p= rank.inteligence
             .col-sm-2
               p= rank.agility
-        input(type="number", id="pagination" value=0)
-        a.btn.btn-default(onClick="goToPage") Przejdź
+        form(method="GET", action="ranking")
+          input(type="number", id="pagination" value=0)
+          button.btn.btn-default(type="submit") Przejdź
         //- nav(aria-label='Page navigation')
           //- ul.pagination
             //- li

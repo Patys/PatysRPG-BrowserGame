@@ -34,7 +34,3 @@
 //
 //
 // $(document).ready(main);
-
-function goToPage() {
-  window.location.href = "/?page="+document.getElementById("pagination").value+"";
-}
