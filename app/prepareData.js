@@ -1,5 +1,22 @@
 var db = require('./dbhelper');
 
+module.exports.getMessageCount(conn, req, next) {
+  var query = 'SELECT id FROM `users` WHERE `token` = ? ';
+  db.query(query, [req.session.user_id], conn, function(user) {
+    if(user) {
+      var queryMessages = 'SELECT COUNT(*) FROM messages WHERE id_to="'+user.id+'" AND state="un"';
+      db.query(queryMessages, '', conn, function(messagesData) {
+        if(messagesData) {
+          var game_data = {
+            messages: messagesData
+          };
+          next(gamedata);
+        }
+      });
+    }
+  });
+}
+
 module.exports.getDataCharacter = function(conn, req, next) {
     var query = 'SELECT id FROM `users` WHERE `token` = ? ';
     db.query(query, [req.session.user_id], conn, function(user) {
