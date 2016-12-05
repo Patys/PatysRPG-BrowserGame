@@ -10,6 +10,7 @@ module.exports.getMessageCount= function(conn, req, next) {
           var messages_count = {
             messages_count: messagesData.num
           };
+          console.dir(messages_count);
           next(messages_count);
         }
       });
