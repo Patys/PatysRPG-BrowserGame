@@ -59,8 +59,8 @@ module.exports.getDataMissions = function(conn, req, next) {
   });
 }
 
-module.exports.getDataRanking = function(conn, req, next) {
-  var queryRanking = 'SELECT characters.strength, characters.vitality, characters.inteligence, characters.agility, users.name FROM characters, users WHERE characters.id_user=users.id';
+module.exports.getDataRanking = function(conn, req, page, next) {
+  var queryRanking = 'SELECT characters.strength, characters.vitality, characters.inteligence, characters.agility, users.name FROM characters, users WHERE characters.id_user=users.id AND (users.id BETWEEN '+(page*10)+' AND '+((page*10)+10)+')';
   db.query(queryRanking, '', conn, function(rankingData) {
     if(rankingData) {
       var game_data = {
