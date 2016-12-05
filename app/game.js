@@ -53,7 +53,7 @@ module.exports.group = function (req, res) {
 module.exports.messages = function (req, res) {
   var page = req.query.page;
   if(!page)
-    page = 0;
+    page = 1;
   pool.getConnection(function(err, conn){
     if(err) throw err;
     data.getDataMessage(conn, req, page, function(game_data) {
@@ -80,7 +80,7 @@ module.exports.missions = function (req, res) {
 module.exports.ranking = function (req, res) {
   var page = req.query.page;
   if(!page)
-    page = 0;
+    page = 1;
   pool.getConnection(function(err, conn){
     if(err) throw err;
     data.getDataRanking(conn, req, page, function(game_data) {

@@ -78,7 +78,7 @@ module.exports.getDataMissions = function(conn, req, next) {
 }
 
 module.exports.getDataRanking = function(conn, req, page, next) {
-  var queryRanking = 'SELECT characters.strength, characters.vitality, characters.inteligence, characters.agility, users.name FROM characters, users WHERE characters.id_user=users.id LIMIT 10 OFFSET '+(page*10)+'';
+  var queryRanking = 'SELECT characters.strength, characters.vitality, characters.inteligence, characters.agility, users.name FROM characters, users WHERE characters.id_user=users.id LIMIT 10 OFFSET '+((page-1)*10)+'';
   db.query(queryRanking, '', conn, function(rankingData) {
     if(rankingData) {
       var game_data = {
@@ -93,7 +93,7 @@ module.exports.getDataMessage = function(conn, req, page, next) {
   var query = 'SELECT id FROM `users` WHERE `token` = ? ';
   db.query(query, [req.session.user_id], conn, function(user) {
     if(user) {
-      var queryMessages = 'SELECT * FROM messages WHERE id_to="'+user.id+'" LIMIT 10 OFFSET '+(page*10)+'';
+      var queryMessages = 'SELECT * FROM messages WHERE id_to="'+user.id+'" LIMIT 10 OFFSET '+((page-1)*10)+'';
       db.query(queryMessages, '', conn, function(messagesData) {
         if(messagesData) {
           var game_data = {
