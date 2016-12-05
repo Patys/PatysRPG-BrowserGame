@@ -27,21 +27,23 @@ div#panel-ranking
               p= rank.inteligence
             .col-sm-2
               p= rank.agility
-        nav(aria-label='Page navigation')
-          ul.pagination
+        input(type="number", id="pagination" value=0)
+        a.btn.btn-default(onClick="goToPage") Przejdź
+        //- nav(aria-label='Page navigation')
+          //- ul.pagination
             //- li
             //-   a(href='?page=1', aria-label='Previous')
             //-     span(aria-hidden='true') «
-            li
-              a(href='?page=1') 1
-            li
-              a(href='?page=2') 2
-            li
-              a(href='?page=3') 3
-            li
-              a(href='?page=4') 4
-            li
-              a(href='?page=5') 5
+            //- li
+            //-   a(href='?page=1') 1
+            //- li
+            //-   a(href='?page=2') 2
+            //- li
+            //-   a(href='?page=3') 3
+            //- li
+            //-   a(href='?page=4') 4
+            //- li
+            //-   a(href='?page=5') 5
             //- li
             //-   a(href='#', aria-label='Next')
             //-     span(aria-hidden='true') »
