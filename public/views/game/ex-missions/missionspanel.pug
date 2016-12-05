@@ -2,7 +2,7 @@
   .panel.panel-default
     #mission-one.panel-heading(role='tab')
       h4.panel-title
-        a(role='button', data-toggle='collapse', data-parent='#missions', href='#mission-one-collapse', aria-expanded='true', aria-controls='mission-one-collapse')= mission_name
+        a(role='button', data-toggle='collapse', data-parent='#missions', href='#mission-one-collapse', aria-expanded='true', aria-controls='mission-one-collapse')= game_data.mission_name
     #mission-one-collapse.panel-collapse.collapse.in(role='tabpanel', aria-labelledby='mission-one')
       .panel-body
         .row
@@ -49,7 +49,7 @@
   .panel.panel-default
     #mission-two.panel-heading(role='tab')
       h4.panel-title
-        a(role='button', data-toggle='collapse', data-parent='#missions', href='#mission-two-collapse', aria-expanded='false', aria-controls='mission-two-collapse')= mission_name2
+        a(role='button', data-toggle='collapse', data-parent='#missions', href='#mission-two-collapse', aria-expanded='false', aria-controls='mission-two-collapse')= game_data.mission_name2
     #mission-two-collapse.panel-collapse.collapse(role='tabpanel', aria-labelledby='mission-two')
       .panel-body
         .row
@@ -96,7 +96,7 @@
   .panel.panel-default
     #mission-three.panel-heading(role='tab')
       h4.panel-title
-        a(role='button', data-toggle='collapse', data-parent='#missions', href='#mission-three-collapse', aria-expanded='false', aria-controls='mission-three-collapse')= mission_name3
+        a(role='button', data-toggle='collapse', data-parent='#missions', href='#mission-three-collapse', aria-expanded='false', aria-controls='mission-three-collapse')= game_data.mission_name3
     #mission-three-collapse.panel-collapse.collapse(role='tabpanel', aria-labelledby='mission-three')
       .panel-body
         .row
