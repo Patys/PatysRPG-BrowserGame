@@ -8,12 +8,8 @@ module.exports.getMessageCount= function(conn, req, next) {
       db.query(queryMessages, '', conn, function(messagesData) {
         if(messagesData) {
           var messages_count = {
-            messages_count: messagesData
+            messages_count: messagesData.num
           };
-          console.dir(messagesData);
-          console.dir(messagesData[0]);
-          console.dir(messages_count);
-          console.dir(messages_count[0]);
           next(messages_count);
         }
       });
