@@ -23,19 +23,19 @@ html
             a(href="/group").btn.btn-large.btn-primary.btn-block#menu-group Grupa
             a(href="/logout" style="margin-top: 35px;").btn.btn-large.btn-info.btn-block#menu-logout Wyloguj
         .col-sm-10
-          if currentUrl === '/character'
+          if game_data.currentUrl === '/character'
             include game/character.pug
-          else if currentUrl === '/missions'
+          else if game_data.currentUrl === '/missions'
             include game/missions.pug
-          else if currentUrl === '/shop'
+          else if game_data.currentUrl === '/shop'
             include game/shop.pug
-          else if currentUrl === '/arena'
+          else if game_data.currentUrl === '/arena'
             include game/arena.pug
-          else if currentUrl === '/ranking'
+          else if game_data.currentUrl === '/ranking'
             include game/ranking.pug
-          else if currentUrl === '/messages'
+          else if game_data.currentUrl === '/messages'
             include game/messages.pug
-          else if currentUrl === '/group'
+          else if game_data.currentUrl === '/group'
             include game/group.pug
           a.btn.btn-info(href="/error") Zgłoś błąd
     footer.footer
