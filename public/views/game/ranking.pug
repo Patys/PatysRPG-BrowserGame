@@ -28,7 +28,7 @@ div#panel-ranking
             .col-sm-2
               p= rank.agility
         form(method="GET", action="ranking")
-          input(type="number", id="pagination" value=0)
+          input(type="number", name="page", id="pagination" value=0)
           button.btn.btn-default(type="submit") Przejdź
         //- nav(aria-label='Page navigation')
           //- ul.pagination
