@@ -7,10 +7,10 @@ module.exports.getMessageCount= function(conn, req, next) {
       var queryMessages = 'SELECT COUNT(*) FROM messages WHERE id_to="'+user.id+'" AND state="un"';
       db.query(queryMessages, '', conn, function(messagesData) {
         if(messagesData) {
-          var game_data = {
-            messages: messagesData
+          var messages_count = {
+            messages_count: messagesData
           };
-          next(game_data);
+          next(messages_count);
         }
       });
     }
