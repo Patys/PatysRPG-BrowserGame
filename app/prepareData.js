@@ -4,7 +4,7 @@ module.exports.getMessageCount= function(conn, req, next) {
   var query = 'SELECT id FROM `users` WHERE `token` = ? ';
   db.query(query, [req.session.user_id], conn, function(user) {
     if(user) {
-      var queryMessages = 'SELECT COUNT(*) FROM messages WHERE id_to="'+user.id+'" AND state="un"';
+      var queryMessages = 'SELECT COUNT(*) as num FROM messages WHERE id_to="'+user.id+'" AND state="un"';
       db.query(queryMessages, '', conn, function(messagesData) {
         if(messagesData) {
           var messages_count = {
