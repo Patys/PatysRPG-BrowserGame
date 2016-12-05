@@ -10,7 +10,7 @@ module.exports.getMessageCount= function(conn, req, next) {
           var game_data = {
             messages: messagesData
           };
-          next(gamedata);
+          next(game_data);
         }
       });
     }
