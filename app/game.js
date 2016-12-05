@@ -39,9 +39,16 @@ module.exports.group = function (req, res) {
 }
 
 module.exports.messages = function (req, res) {
-  var game_data = {};
-  game_data.currentUrl = '/messages';
-  res.render('game', game_data);
+  var page = req.query.page;
+  if(!page)
+    page = 0;
+  pool.getConnection(function(err, conn){
+    if(err) throw err;
+    data.getDataMessage(conn, req, page, function(game_data) {
+      game_data.currentUrl = '/messages';
+      res.render('game', game_data);
+    });
+  });
 }
 
 module.exports.missions = function (req, res) {

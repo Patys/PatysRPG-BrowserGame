@@ -3,4 +3,24 @@ div#panel-messages
     .panel-heading
       h3.panel-title Wiadomości
     .panel-body
-      p Info o wiadomosci
+      .messages
+        .row(style="border-bottom: 1px solid #d3d3d3; margin-left: 15px; margin-right: 15px;")
+          .col-sm-4
+            p Tytuł
+          .col-sm-2
+            p Od
+          .col-sm-2
+            p Data
+        each message in messages
+          .row(style="border-bottom: 1px solid #d3d3d3; margin-left: 15px; margin-right: 15px;")
+            .col-sm-8
+              p= message.title
+            .col-sm-2
+              p= message.id_from
+            .col-sm-2
+              p= message.date
+        form.form-inline(action='/ranking', method='GET')
+          .form-group
+            label(for='pagination') Strona &nbsp;
+            input#pagination.form-control(name='page', type='number', placeholder='Strona')
+          button.btn.btn-default(type='submit') Przejdź
