@@ -22,7 +22,6 @@ module.exports.arena = function (req, res) {
     if(err) throw err;
     data.getMessageCount(conn,req, function(messages_count){
       game_data.currentUrl = '/arena';
-      console.dir(messages_count);
       res.render('game', {'messages_count': messages_count, 'game_data': game_data});
     });
   });
