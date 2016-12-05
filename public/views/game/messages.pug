@@ -11,7 +11,7 @@ div#panel-messages
             p Od
           .col-sm-2
             p Data
-        each message in messages
+        each message in game_data.messages
           .row(style="border-bottom: 1px solid #d3d3d3; margin-left: 15px; margin-right: 15px;")
             .col-sm-8
               p= message.title
