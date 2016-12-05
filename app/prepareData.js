@@ -75,7 +75,7 @@ module.exports.getDataMessage = function(conn, req, page, next) {
   var query = 'SELECT id FROM `users` WHERE `token` = ? ';
   db.query(query, [req.session.user_id], conn, function(user) {
     if(user) {
-      var queryMessages = 'SELECT * FROM messages WHERE messages.id_to='+user.id+' LIMIT 10 OFFSET '+(page*10)+'';
+      var queryMessages = 'SELECT * FROM messages WHERE id_to="'+user.id+'" LIMIT 10 OFFSET '+(page*10)+'';
       db.query(queryMessages, '', conn, function(messagesData) {
         if(messagesData) {
           var game_data = {
