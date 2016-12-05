@@ -27,7 +27,7 @@ div#panel-ranking
               p= rank.inteligence
             .col-sm-2
               p= rank.agility
-        form(action='/ranking', method='GET')
+        form.form-inline(action='/ranking', method='GET')
           .form-group
             label(for='pagination') Strona
             input#pagination.form-control(name='page', type='number', placeholder='Strona')
