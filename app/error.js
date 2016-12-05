@@ -19,12 +19,12 @@ module.exports.post = function (req, res) {
   var errorReport = {
    "attachments":[
       {
-         "fallback":"Zgłoszono nowy błąd",
-         "pretext":"Zgłoszono nowy błąd",
+         "fallback":"Zgłoszono nowy błąd - PATYSRPG",
+         "pretext":"Zgłoszono nowy błąd - PATYSRPG",
          "color":"#D00000",
          "fields":[
             {
-               "title":"Błąd",
+               "title":"Błąd - PATYSRPG",
                "value": userData,
                "short":false
             }

@@ -58,9 +58,12 @@ module.exports.missions = function (req, res) {
 }
 
 module.exports.ranking = function (req, res) {
-  getData(req, function(game_data) {
-    game_data.currentUrl = '/ranking';
-    res.render('game', game_data);
+  pool.getConnection(function(err, conn){
+    if(err) throw err;
+    data.getDataRanking(conn, req, function(game_data) {
+      game_data.currentUrl = '/ranking';
+      res.render('game', game_data);
+    });
   });
 }
 
