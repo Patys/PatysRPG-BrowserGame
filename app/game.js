@@ -20,8 +20,10 @@ module.exports.arena = function (req, res) {
   var game_data = {};
   pool.getConnection(function(err, conn){
     if(err) throw err;
-    game_data.currentUrl = '/arena';
-    res.render('game', game_data);
+    data.getMessageCount(conn,req, function(messages_count){
+      game_data.currentUrl = '/arena';
+      res.render('game', {'messages_count': messages_count, 'game_data': game_data});
+    });
   });
 }
 
@@ -31,7 +33,7 @@ module.exports.character = function (req, res) {
     data.getDataCharacter(conn, req, function(game_data) {
       data.getMessageCount(conn,req, function(messages_count){
         game_data.currentUrl = '/character';
-        res.render('game', {messages_count, game_data});
+        res.render('game', {'messages_count': messages_count, 'game_data': game_data});
       });
     });
   });
@@ -43,7 +45,7 @@ module.exports.group = function (req, res) {
     if(err) throw err;
     data.getMessageCount(conn,req, function(messages_count){
       game_data.currentUrl = '/group';
-      res.render('game', {messages_count, game_data});
+      res.render('game', {'messages_count': messages_count, 'game_data': game_data});
     });
   });
 }
@@ -57,7 +59,7 @@ module.exports.messages = function (req, res) {
     data.getDataMessage(conn, req, page, function(game_data) {
       data.getMessageCount(conn,req, function(messages_count){
         game_data.currentUrl = '/messages';
-        res.render('game', {messages_count, game_data});
+        res.render('game', {'messages_count': messages_count, 'game_data': game_data});
       });
     });
   });
@@ -69,7 +71,7 @@ module.exports.missions = function (req, res) {
     data.getDataMissions(conn, req, function(game_data) {
       data.getMessageCount(conn,req, function(messages_count){
         game_data.currentUrl = '/missions';
-        res.render('game', {messages_count, game_data});
+        res.render('game', {'messages_count': messages_count, 'game_data': game_data});
       });
     });
   });
@@ -84,7 +86,7 @@ module.exports.ranking = function (req, res) {
     data.getDataRanking(conn, req, page, function(game_data) {
       data.getMessageCount(conn,req, function(messages_count){
         game_data.currentUrl = '/ranking';
-        res.render('game', {messages_count, game_data});
+        res.render('game', {'messages_count': messages_count, 'game_data': game_data});
       });
     });
   });
@@ -96,7 +98,7 @@ module.exports.shop = function (req, res) {
     if(err) throw err;
     data.getMessageCount(conn,req, function(messages_count){
       game_data.currentUrl = '/shop';
-      res.render('game', {messages_count, game_data});
+      res.render('game', {'messages_count': messages_count, 'game_data': game_data});
     });
   });
 }
