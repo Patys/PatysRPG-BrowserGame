@@ -19,7 +19,9 @@ html
             button.btn.btn-large.btn-primary.btn-block#menu-ranking Ranking
             button.btn.btn-large.btn-primary.btn-block#menu-messages
               | Wiadomości &nbsp;
+              - if (typeof(messages_count) !== 'undefined'){
               span.badge= messages_count.messages_count
+              - }
             button.btn.btn-large.btn-primary.btn-block#menu-group Grupa
             a(href="/logout" style="margin-top: 35px;").btn.btn-large.btn-info.btn-block#menu-logout Wyloguj
         .col-sm-10
