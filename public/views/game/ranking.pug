@@ -15,6 +15,7 @@ div#panel-ranking
             p Inteligencja
           .col-sm-2
             p Zreczność
+        - if (typeof(game_data) !== 'undefined'){
         each rank in game_data.ranking
           .row(style="border-bottom: 1px solid #d3d3d3; margin-left: 15px; margin-right: 15px;")
             .col-sm-4
@@ -51,3 +52,6 @@ div#panel-ranking
             //- li
             //-   a(href='#', aria-label='Next')
             //-     span(aria-hidden='true') »
+        - } else {
+          p Błąd
+        - }
