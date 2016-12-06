@@ -31,8 +31,12 @@ module.exports.arena = function (req, res) {
   pool.getConnection(function(err, conn){
     if(err) throw err;
     data.getMessageCount(conn,req, function(messages_count){
-      game_data.currentUrl = '/arena';
-      res.render('game/arena', {'messages_count': messages_count, 'game_data': game_data});
+      if (typeof messages_count !== 'undefined') {
+        game_data.currentUrl = '/arena';
+        res.render('game/arena', {'messages_count': messages_count, 'game_data': game_data});
+      } else {
+        res.redirect('/error');
+      }
     });
   });
 }
