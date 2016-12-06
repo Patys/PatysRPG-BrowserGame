@@ -12,33 +12,18 @@ html
       .row
         .col-sm-2
           .menu
-            button.btn.btn-large.btn-primary.btn-block#menu-character-button Postać
-            a(href="/character").btn.btn-large.btn-primary.btn-block#menu-character Postać
-            a(href="/missions").btn.btn-large.btn-primary.btn-block#menu-mission Misje
-            a(href="/shop").btn.btn-large.btn-primary.btn-block#menu-shop Sklep
-            a(href="/arena").btn.btn-large.btn-primary.btn-block#menu-arena Arena
-            a(href="/ranking").btn.btn-large.btn-primary.btn-block#menu-ranking Ranking
-            a(href="/messages").btn.btn-large.btn-primary.btn-block#menu-messages
+            button.btn.btn-large.btn-primary.btn-block#menu-character Postać
+            button.btn.btn-large.btn-primary.btn-block#menu-mission Misje
+            button.btn.btn-large.btn-primary.btn-block#menu-shop Sklep
+            button.btn.btn-large.btn-primary.btn-block#menu-arena Arena
+            button.btn.btn-large.btn-primary.btn-block#menu-ranking Ranking
+            button.btn.btn-large.btn-primary.btn-block#menu-messages
               | Wiadomości &nbsp;
               span.badge= messages_count.messages_count
-            a(href="/group").btn.btn-large.btn-primary.btn-block#menu-group Grupa
+            button.btn.btn-large.btn-primary.btn-block#menu-group Grupa
             a(href="/logout" style="margin-top: 35px;").btn.btn-large.btn-info.btn-block#menu-logout Wyloguj
         .col-sm-10
           #content
-          if game_data.currentUrl === '/character'
-            include game/character.pug
-          else if game_data.currentUrl === '/missions'
-            include game/missions.pug
-          else if game_data.currentUrl === '/shop'
-            include game/shop.pug
-          else if game_data.currentUrl === '/arena'
-            include game/arena.pug
-          else if game_data.currentUrl === '/ranking'
-            include game/ranking.pug
-          else if game_data.currentUrl === '/messages'
-            include game/messages.pug
-          else if game_data.currentUrl === '/group'
-            include game/group.pug
           a.btn.btn-info(href="/error") Zgłoś błąd
     footer.footer
       p(style="text-align: center;").text-muted Patryk "patys_prog" Szczygło &copy; 2016
