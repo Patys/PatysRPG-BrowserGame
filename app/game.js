@@ -33,7 +33,7 @@ module.exports.character = function (req, res) {
     data.getDataCharacter(conn, req, function(game_data) {
       data.getMessageCount(conn,req, function(messages_count){
         game_data.currentUrl = '/character';
-        res.render('game', {'messages_count': messages_count, 'game_data': game_data});
+        res.render('game/character', {'messages_count': messages_count, 'game_data': game_data});
       });
     });
   });
