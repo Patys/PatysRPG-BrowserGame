@@ -21,6 +21,8 @@ html
               | Wiadomości &nbsp;
               - if (typeof(messages_count) !== 'undefined'){
               span.badge= messages_count.messages_count
+              - } else {
+                p Błąd
               - }
             button.btn.btn-large.btn-primary.btn-block#menu-group Grupa
             a(href="/logout" style="margin-top: 35px;").btn.btn-large.btn-info.btn-block#menu-logout Wyloguj
