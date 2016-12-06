@@ -37,7 +37,7 @@
 
 function main() {
   $("#menu-character-button").click(function(){
-      $.ajax({url: "/ajaxcharacter", success: function(result){
+      $.ajax({url: "/get/character", success: function(result){
           $("#content").html(result);
       }});
   });
