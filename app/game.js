@@ -39,6 +39,18 @@ module.exports.character = function (req, res) {
   });
 }
 
+module.exports.ajaxcharacter = function (req, res) {
+  pool.getConnection(function(err, conn){
+    if(err) throw err;
+    data.getDataCharacter(conn, req, function(game_data) {
+      data.getMessageCount(conn,req, function(messages_count){
+        game_data.currentUrl = '/character';
+        res.render('game/character', {'messages_count': messages_count, 'game_data': game_data});
+      });
+    });
+  });
+}
+
 module.exports.group = function (req, res) {
   var game_data = {};
   pool.getConnection(function(err, conn){
