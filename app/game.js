@@ -27,7 +27,8 @@ module.exports.get = function (req, res) {
     });
   } catch (err) {
     // handle the error safely
-    console.log(err)
+    console.log('Cannot get connection: \n\n' + err);
+    res.redirect('/error');
   }
 }
 
@@ -43,7 +44,8 @@ module.exports.arena = function (req, res) {
     });
   } catch (err) {
     // handle the error safely
-    console.log(err)
+    console.log('Cannot get connection: \n\n' + err);
+    res.redirect('/error');
   }
 }
 
@@ -60,7 +62,8 @@ module.exports.character = function (req, res) {
     });
   } catch (err) {
     // handle the error safely
-    console.log(err)
+    console.log('Cannot get connection: \n\n' + err);
+    res.redirect('/error');
   }
 }
 
@@ -76,7 +79,8 @@ module.exports.group = function (req, res) {
     });
   } catch (err) {
     // handle the error safely
-    console.log(err)
+    console.log('Cannot get connection: \n\n' + err);
+    res.redirect('/error');
   }
 }
 
@@ -96,7 +100,8 @@ module.exports.messages = function (req, res) {
     });
   } catch (err) {
     // handle the error safely
-    console.log(err)
+    console.log('Cannot get connection: \n\n' + err);
+    res.redirect('/error');
   }
 }
 
@@ -113,7 +118,8 @@ module.exports.missions = function (req, res) {
     });
   } catch (err) {
     // handle the error safely
-    console.log(err)
+    console.log('Cannot get connection: \n\n' + err);
+    res.redirect('/error');
   }
 }
 
@@ -133,7 +139,8 @@ module.exports.ranking = function (req, res) {
     });
   } catch (err) {
     // handle the error safely
-    console.log(err)
+    console.log('Cannot get connection: \n\n' + err);
+    res.redirect('/error');
   }
 }
 
@@ -149,6 +156,7 @@ module.exports.shop = function (req, res) {
     });
   } catch (err) {
     // handle the error safely
-    console.log(err)
+    console.log('Cannot get connection: \n\n' + err);
+    res.redirect('/error');
   }
 }

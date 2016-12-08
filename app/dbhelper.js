@@ -7,7 +7,7 @@ module.exports.query = function (query, args, conn, next) {
       });
     }
     catch(err) {
-      console.log(err);
+      console.log('Cannot query: \n\n' + err);
       next();
     }
   } else {
@@ -18,7 +18,7 @@ module.exports.query = function (query, args, conn, next) {
       });
     }
     catch(err) {
-      console.log(err);
+      console.log('Cannot query: \n\n' + err);
       next();
     }
   }
