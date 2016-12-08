@@ -4,31 +4,13 @@ var db = require('./dbhelper');
 module.exports.getMessageCount= function(conn, req, next) {
   var query = 'SELECT id FROM `users` WHERE `token` = ? ';
   db.query(query, [req.session.user_id], conn, function(user) {
-    if(user.length !== 0) {
-      var queryMessages = 'SELECT COUNT(*) as num FROM messages WHERE id_to="'+user.id+'" AND state="un";';
-      db.query(queryMessages, '', conn, function(messagesData) {
-        if(messagesData.length !== 0) {
-          var messages_count = {
-            messages_count: messagesData[0].num
-          };
-          next(messages_count);
-        }
-        else {
-          var messages_count = {
-            messages_count: 0
-          };
-          console.log('No messages get: ' + user.id);
-          next(messages_count);
-        }
-      });
-    }
-    else {
+    var queryMessages = 'SELECT COUNT(*) as num FROM messages WHERE id_to="'+user.id+'" AND state="un";';
+    db.query(queryMessages, '', conn, function(messagesData) {
       var messages_count = {
-        messages_count: 0
+        messages_count: messagesData[0].num
       };
-      console.log('No user: ' + req.session.user_id);
       next(messages_count);
-    }
+    });
   });
 }
 

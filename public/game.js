@@ -37,39 +37,25 @@
 
 function main() {
   $("#menu-character").click(function(){
-      $.ajax({url: "/character", success: function(result){
-          $("#content").html(result);
-      }});
+      $("#content").load("/character");
   });
   $("#menu-arena").click(function(){
-      $.ajax({url: "/arena", success: function(result){
-          $("#content").html(result);
-      }});
+      $("#content").load("/arena");
   });
   $("#menu-group").click(function(){
-      $.ajax({url: "/group", success: function(result){
-          $("#content").html(result);
-      }});
+      $("#content").load("/group");
   });
   $("#menu-messages").click(function(){
-      $.ajax({url: "/messages", success: function(result){
-          $("#content").html(result);
-      }});
+      $("#content").load("/messages");
   });
   $("#menu-missions").click(function(){
-      $.ajax({url: "/missions", success: function(result){
-          $("#content").html(result);
-      }});
+      $("#content").load("/missions");
   });
   $("#menu-ranking").click(function(){
-      $.ajax({url: "/ranking", success: function(result){
-          $("#content").html(result);
-      }});
+      $("#content").load("/ranking");
   });
   $("#menu-shop").click(function(){
-      $.ajax({url: "/shop", success: function(result){
-          $("#content").html(result);
-      }});
+      $("#content").load("/shop");
   });
 }
 

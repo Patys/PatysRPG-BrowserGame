@@ -34,12 +34,10 @@ module.exports.get = function (req, res) {
 
 module.exports.arena = function (req, res) {
   try {
-    var game_data = {};
     pool.getConnection(function(err, conn){
       if(err) throw err;
       data.getMessageCount(conn,req, function(messages_count){
-        game_data.currentUrl = '/arena';
-        res.render('game/arena', {'messages_count': messages_count, 'game_data': game_data});
+        res.render('game/arena', {'messages_count': messages_count});
       });
     });
   } catch (err) {
