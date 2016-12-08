@@ -22,3 +22,13 @@ Statystyki:
  - witalnosc
  - inteligencja
  - zrecznosc
+
+
+Proxy Error
+
+The proxy server received an invalid response from an upstream server.
+The proxy server could not handle the request GET /game.
+
+Reason: Error reading from remote server
+
+Apache/2.2.15 (Red Hat) Server at best-patysgames.rhcloud.com Port 80
