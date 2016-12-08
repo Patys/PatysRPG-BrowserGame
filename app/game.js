@@ -22,6 +22,7 @@ module.exports.get = function (req, res) {
     pool.getConnection(function(err, conn){
       if(err) throw err;
       data.getMessageCount(conn,req, function(messages_count){
+        conn.release();
         res.render('game', {'messages_count': messages_count, 'game_data': game_data});
       });
     });
@@ -37,6 +38,7 @@ module.exports.arena = function (req, res) {
     pool.getConnection(function(err, conn){
       if(err) throw err;
       data.getMessageCount(conn,req, function(messages_count){
+        conn.release();
         res.render('game/arena', {'messages_count': messages_count});
       });
     });
@@ -53,6 +55,7 @@ module.exports.character = function (req, res) {
       if(err) throw err;
       data.getDataCharacter(conn, req, function(game_data) {
         data.getMessageCount(conn,req, function(messages_count){
+          conn.release();
           game_data.currentUrl = '/character';
           res.render('game/character', {'messages_count': messages_count, 'game_data': game_data});
         });
@@ -71,6 +74,7 @@ module.exports.group = function (req, res) {
     pool.getConnection(function(err, conn){
       if(err) throw err;
       data.getMessageCount(conn,req, function(messages_count){
+        conn.release();
         game_data.currentUrl = '/group';
         res.render('game/group', {'messages_count': messages_count, 'game_data': game_data});
       });
@@ -90,7 +94,8 @@ module.exports.messages = function (req, res) {
     pool.getConnection(function(err, conn){
       if(err) throw err;
       data.getDataMessage(conn, req, page, function(game_data) {
-        data.getMessageCount(conn,req, function(messages_count){
+        data.getMessageCount(conn,req, function(messages_count) {
+          conn.release();
           game_data.currentUrl = '/messages';
           res.render('game/messages', {'messages_count': messages_count, 'game_data': game_data});
         });
@@ -109,6 +114,7 @@ module.exports.missions = function (req, res) {
       if(err) throw err;
       data.getDataMissions(conn, req, function(game_data) {
         data.getMessageCount(conn,req, function(messages_count){
+          conn.release();
           game_data.currentUrl = '/missions';
           res.render('game/missions', {'messages_count': messages_count, 'game_data': game_data});
         });
@@ -129,7 +135,8 @@ module.exports.ranking = function (req, res) {
     pool.getConnection(function(err, conn){
       if(err) throw err;
       data.getDataRanking(conn, req, page, function(game_data) {
-        data.getMessageCount(conn,req, function(messages_count){
+        data.getMessageCount(conn,req, function(messages_count) {
+          conn.release();
           game_data.currentUrl = '/ranking';
           res.render('game/ranking', {'messages_count': messages_count, 'game_data': game_data});
         });
@@ -148,6 +155,7 @@ module.exports.shop = function (req, res) {
     pool.getConnection(function(err, conn){
       if(err) throw err;
       data.getMessageCount(conn,req, function(messages_count){
+        conn.release();
         game_data.currentUrl = '/shop';
         res.render('game/shop', {'messages_count': messages_count, 'game_data': game_data});
       });
