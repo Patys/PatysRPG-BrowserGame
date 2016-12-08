@@ -11,14 +11,15 @@ module.exports.query = function (query, args, conn, next) {
       next();
     }
   } else {
-  try {
-    conn.query(query,function(err, rows) {
-      if(err) throw err;
-      next(rows);
-    });
-  }
-  catch(err) {
-    console.log(err);
-    next();
+    try {
+      conn.query(query,function(err, rows) {
+        if(err) throw err;
+        next(rows);
+      });
+    }
+    catch(err) {
+      console.log(err);
+      next();
+    }
   }
 }
