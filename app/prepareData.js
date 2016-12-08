@@ -1,5 +1,6 @@
 var db = require('./dbhelper');
 
+// TODO: FIX MESSAGE COUNT 
 module.exports.getMessageCount= function(conn, req, next) {
   var query = 'SELECT id FROM `users` WHERE `token` = ? ';
   db.query(query, [req.session.user_id], conn, function(user) {
@@ -12,7 +13,18 @@ module.exports.getMessageCount= function(conn, req, next) {
           };
           next(messages_count);
         }
+        else {
+          var messages_count = {
+            messages_count: 0
+          };
+          next(messages_count);
+        }
       });
+    } else {
+      var messages_count = {
+        messages_count: 0
+      };
+      next(messages_count);
     }
   });
 }
