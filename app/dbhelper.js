@@ -1,13 +1,24 @@
 module.exports.query = function (query, args, conn, next) {
-  if(args) {
-    conn.query(query, args,function(err, rows) {
-      if(err) throw err;
-      next(rows);
-    });
+  if(args.length !== 0) {
+    try {
+      conn.query(query, args,function(err, rows) {
+        if(err) throw err;
+        next(rows);
+      });
+    }
+    catch(err) {
+      console.log(err);
+      next();
+    }
   } else {
+  try {
     conn.query(query,function(err, rows) {
       if(err) throw err;
       next(rows);
     });
+  }
+  catch(err) {
+    console.log(err);
+    next();
   }
 }
