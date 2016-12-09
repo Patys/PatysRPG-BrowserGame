@@ -54,10 +54,10 @@ function main() {
   $("#menu-ranking").click(function(){
       $("#content").load("/ranking");
   });
-  $("#ranking-get").click(function(){
+  $("#ranking_get").click(function(){
       console.log("get ranknig");
-      console.log("/ranking?page=" + $('#pagination-ranking').val());
-      $("#content").load("/ranking?page=" + $('#pagination-ranking').val());
+      console.log("/ranking?page=" + $('#pagination_ranking').val());
+      $("#content").load("/ranking?page=" + $('#pagination_ranking').val());
   });
   $("#menu-shop").click(function(){
       $("#content").load("/shop");
