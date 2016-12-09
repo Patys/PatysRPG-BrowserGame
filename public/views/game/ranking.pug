@@ -28,10 +28,10 @@ div#panel-ranking
               p= rank.inteligence
             .col-sm-2
               p= rank.agility
-          .container(style="display: inline;")
-            label(for='pagination') Strona &nbsp;
-            input#pagination.form-control(name='page', type='number', placeholder='Strona')
-            button.btn.btn-default#ranking-get Przejdź
+        .container(style="display: inline;")
+          label(for='pagination', style="display: inline;") Strona &nbsp;
+          input#pagination.form-control(name='page', type='number', placeholder='Strona', style="display: inline;")
+          button.btn.btn-default#ranking-get(style="display: inline;") Przejdź
 
         //- nav(aria-label='Page navigation')
           //- ul.pagination
