@@ -55,7 +55,7 @@ function main() {
       $("#content").load("/ranking");
   });
   $("#ranking-get").click(function(){
-      $("#content").load("/ranking?page=" + $('#pagination').val());
+      $("#content").load("/ranking?page=" + $('#pagination-ranking').val());
   });
   $("#menu-shop").click(function(){
       $("#content").load("/shop");
