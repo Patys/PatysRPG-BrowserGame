@@ -6,12 +6,10 @@
     #mission-one-collapse.panel-collapse.collapse.in(role='tabpanel', aria-labelledby='mission-one')
       .panel-body
         .row
-          .col-sm-12
-            p= game_data.mission_description
-        .row
           .col-sm-4
             .row
               .col-sm-8
+                p= game_data.mission_description
                 p Pieniądze &nbsp;
               .col-sm-4
                 span.badge= game_data.mission_money
@@ -26,12 +24,10 @@
     #mission-two-collapse.panel-collapse.collapse(role='tabpanel', aria-labelledby='mission-two')
       .panel-body
         .row
-          .col-sm-12
-            p= game_data.mission_description2
-        .row
           .col-sm-4
             .row
               .col-sm-8
+                p= game_data.mission_description2
                 p Pieniądze &nbsp;
               .col-sm-4
                 span.badge= game_data.mission_money2
@@ -47,13 +43,11 @@
     #mission-three-collapse.panel-collapse.collapse(role='tabpanel', aria-labelledby='mission-three')
       .panel-body
         .row
-          .col-sm-12
-            p= game_data.mission_description3
-        .row
           .col-sm-4
             .row
               .col-sm-8
                 p Pieniądze &nbsp;
+                  p= game_data.mission_description3
               .col-sm-4
                 span.badge= game_data.mission_money3
           .col-sm-8
