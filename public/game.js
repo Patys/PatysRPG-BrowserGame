@@ -54,6 +54,9 @@ function main() {
   $("#menu-ranking").click(function(){
       $("#content").load("/ranking");
   });
+  $("#ranking-get").click(function(){
+      $("#content").load("/ranking?page=" + $('#pagination').val());
+  });
   $("#menu-shop").click(function(){
       $("#content").load("/shop");
   });
