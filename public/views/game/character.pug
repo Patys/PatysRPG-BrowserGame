@@ -11,28 +11,36 @@ div#panel-character
             .panel-body
               .row
                 .col-sm-8
+                  p.lead(data-toggle="tooltip", data-placement="right", title="Hajs sie musi zgadzac") Pieniądze &nbsp;
+                .col-sm-4
+                  span.badge= game_data.money
+              .row
+                .col-sm-8
                   p(data-toggle="tooltip", data-placement="right", title="Zwieksza zadawane obrazenia") Siła &nbsp;
                 .col-sm-4
                   span.badge= game_data.strength
+                  button.btn.btn-default.btn-small()
+                    span.glyphicon.glyphicon-plus
               .row
                 .col-sm-8
                   p(data-toggle="tooltip", data-placement="right", title="Zwieksza punkty zycia") Witalność &nbsp;
                 .col-sm-4
                   span.badge= game_data.vitality
+                  button.btn.btn-default.btn-small()
+                    span.glyphicon.glyphicon-plus
               .row
                 .col-sm-8
                   p(data-toggle="tooltip", data-placement="right", title="Zwieksza szanse na atak krytyczny") Inteligencja &nbsp;
                 .col-sm-4
                   span.badge= game_data.inteligence
+                  button.btn.btn-default.btn-small()
+                    span.glyphicon.glyphicon-plus
               .row
                 .col-sm-8
                   p(data-toggle="tooltip", data-placement="right", title="Zwieksza szanse na unik") Zreczność &nbsp;
                 .col-sm-4
                   span.badge= game_data.agility
-              .row
-                .col-sm-8
-                  p(data-toggle="tooltip", data-placement="right", title="Hajs sie musi zgadzac") Pieniądze &nbsp;
-                .col-sm-4
-                  span.badge= game_data.money
+                  button.btn.btn-default.btn-small()
+                    span.glyphicon.glyphicon-plus
         .col-sm-8
-          img(src="http://i.imgur.com/XTwwOEZ.gif", alt="Postac").img-thumbnail
+          img(src="http://i.imgur.com/X5mfleb.jpg", alt="Postac").img-thumbnail
