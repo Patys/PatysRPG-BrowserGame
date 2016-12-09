@@ -14,8 +14,8 @@ html
           .menu
             button.btn.btn-large.btn-primary.btn-block#menu-character Postać
             button.btn.btn-large.btn-primary.btn-block#menu-missions Misje
-            button.btn.btn-large.btn-primary.btn-block#menu-shop Sklep
-            button.btn.btn-large.btn-primary.btn-block#menu-arena Arena
+            button(disabled).btn.btn-large.btn-default.btn-block#menu-shop Sklep
+            button(disabled).btn.btn-large.btn-default.btn-block#menu-arena Arena
             button.btn.btn-large.btn-primary.btn-block#menu-ranking Ranking
             button.btn.btn-large.btn-primary.btn-block#menu-messages
               | Wiadomości &nbsp;
@@ -24,7 +24,7 @@ html
               - } else {
                 p Błąd
               - }
-            button.btn.btn-large.btn-primary.btn-block#menu-group Grupa
+            button(disabled).btn.btn-large.btn-default.btn-block#menu-group Grupa
             a(href="/logout" style="margin-top: 35px;").btn.btn-large.btn-info.btn-block#menu-logout Wyloguj
         .col-sm-10
           #content
