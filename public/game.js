@@ -36,30 +36,30 @@
 // $(document).ready(main);
 
 function main() {
-  $("#menu-character").click(function(){
+  $("#menu-character").live('click', function(){
       $("#content").load("/character");
   });
-  $("#menu-arena").click(function(){
+  $("#menu-arena").live('click', function(){
       $("#content").load("/arena");
   });
-  $("#menu-group").click(function(){
+  $("#menu-group").live('click', function(){
       $("#content").load("/group");
   });
-  $("#menu-messages").click(function(){
+  $("#menu-messages").live('click', function(){
       $("#content").load("/messages");
   });
-  $("#menu-missions").click(function(){
+  $("#menu-missions").live('click', function(){
       $("#content").load("/missions");
   });
-  $("#menu-ranking").click(function(){
+  $("#menu-ranking").live('click', function(){
       $("#content").load("/ranking");
   });
-  $("#rankingget").click(function(){
+  $("#rankingget").live('click', function(){
       console.log("get ranknig");
       console.log("/ranking?page=" + $('#paginationranking').val());
       $("#content").load("/ranking?page=" + $('#paginationranking').val());
   });
-  $("#menu-shop").click(function(){
+  $("#menu-shop").live('click', function(){
       $("#content").load("/shop");
   });
 }
