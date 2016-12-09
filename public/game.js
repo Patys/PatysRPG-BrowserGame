@@ -39,27 +39,25 @@ function main() {
   $('body').on('click', '#menu-character', function(e){
       $("#content").load("/character");
   });
-  $("#menu-arena").live('click', function(){
+  $('body').on('click', '#menu-arena', function(e){
       $("#content").load("/arena");
   });
-  $("#menu-group").live('click', function(){
+  $('body').on('click', '#menu-group', function(e){
       $("#content").load("/group");
   });
-  $("#menu-messages").live('click', function(){
+  $('body').on('click', '#menu-messages', function(e){
       $("#content").load("/messages");
   });
-  $("#menu-missions").live('click', function(){
+  $('body').on('click', '#menu-missions', function(e){
       $("#content").load("/missions");
   });
-  $("#menu-ranking").live('click', function(){
+  $('body').on('click', '#menu-ranking', function(e){
       $("#content").load("/ranking");
   });
-  $("#rankingget").live('click', function(){
-      console.log("get ranknig");
-      console.log("/ranking?page=" + $('#paginationranking').val());
-      $("#content").load("/ranking?page=" + $('#paginationranking').val());
+  $('body').on('click', '#rankingget', function(e){
+    $("#content").load("/ranking?page=" + $('#paginationranking').val());
   });
-  $("#menu-shop").live('click', function(){
+  $('body').on('click', '#menu-shop', function(e){
       $("#content").load("/shop");
   });
 }
