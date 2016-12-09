@@ -8,13 +8,16 @@
         .row
           .col-sm-4
             .row
-              .col-sm-8
+              .col-sm-12
                 p= game_data.mission_description
+            .row
+              .col-sm-8
                 p Pieniądze &nbsp;
               .col-sm-4
                 span.badge= game_data.mission_money
+
           .col-sm-8
-            img(src="http://i.imgur.com/jF755L9.jpg")
+            img(src="http://i.imgur.com/eHA2FPC.jpg").img-responsive
 
 
   .panel.panel-default
@@ -35,7 +38,7 @@
                 span.badge= game_data.mission_money2
 
           .col-sm-8
-            img(src="http://i.imgur.com/eHA2FPC.jpg")
+            img(src="http://i.imgur.com/eHA2FPC.jpg").img-responsive
 
 
 
@@ -48,10 +51,13 @@
         .row
           .col-sm-4
             .row
+              .col-sm-12
+                p= game_data.mission_description3
+            .row
               .col-sm-8
                 p Pieniądze &nbsp;
-                  p= game_data.mission_description3
               .col-sm-4
                 span.badge= game_data.mission_money3
+
           .col-sm-8
-            img(src="http://i.imgur.com/jF755L9.jpg")
+            img(src="http://i.imgur.com/eHA2FPC.jpg").img-responsive
