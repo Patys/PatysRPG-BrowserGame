@@ -36,7 +36,7 @@
 // $(document).ready(main);
 
 function main() {
-  $("#menu-character").live('click', function(){
+  $('body').on('click', '#menu-character', function(e){
       $("#content").load("/character");
   });
   $("#menu-arena").live('click', function(){
