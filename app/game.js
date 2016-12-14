@@ -160,6 +160,7 @@ module.exports.startMission = function(req, res) {
                                       \""+date+"\",\
                                       \"\");";
               db.query(queryStartMission,'', conn, function(result) {
+                conn.release();
                 res.redirect('/game');
               });
             }
