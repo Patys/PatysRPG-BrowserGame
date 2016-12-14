@@ -134,7 +134,6 @@ module.exports.startMission = function(req, res) {
       if(err) throw err;
 
       var post = req.body;
-      console.dir(post);
       pool.getConnection(function(err, conn){
         if(err) {
           res.json(err);
