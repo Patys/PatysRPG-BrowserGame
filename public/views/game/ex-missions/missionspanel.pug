@@ -23,7 +23,7 @@
             .row
               .col-sm-12
                 form(action='/mission/start', method="post")
-                  input(value=game_data.mission_id, hidden)
+                  input(value=game_data.mission_id, hidden, name="mission_id")
                   input.btn.btn-default(type="submit", value="Rozpocznij")
 
           .col-sm-8
@@ -54,7 +54,7 @@
             .row
               .col-sm-12
                 form(action='/mission/start', method="post")
-                  input(value=game_data.mission_id2, hidden)
+                  input(value=game_data.mission_id2, hidden, name="mission_id")
                   input.btn.btn-default(type="submit", value="Rozpocznij")
 
           .col-sm-8
@@ -86,7 +86,7 @@
             .row
               .col-sm-12
                 form(action='/mission/start', method="post")
-                  input(value=game_data.mission_id3, hidden)
+                  input(value=game_data.mission_id3, hidden, name="mission_id")
                   input.btn.btn-default(type="submit", value="Rozpocznij")
 
           .col-sm-8
