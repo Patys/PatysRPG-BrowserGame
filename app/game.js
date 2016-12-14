@@ -7,6 +7,7 @@ var pool = mysql.createPool({
     database : process.env.OPENSHIFT_APP_NAME
   });
 var data = require('./prepareData');
+var db = require('./dbhelper');
 
 // function getData(req, next) {
 //   //WHERE users.name=" + post.username + " AND users.password=" + post.password + "";
