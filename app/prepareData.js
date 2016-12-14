@@ -105,7 +105,7 @@ module.exports.get = function(conn, req, next) {
               var queryMissions = 'SELECT * FROM missions where `id` = ?';
               db.query(queryMissions, activeMission[0].id_mission, conn, function(mission) {
                 var game_data = {
-                  active_mission: true,
+                  active_mission: 'true',
                   mission_description: mission[0].description,
                   mission_name: mission[0].name,
                   mission_time: mission[0].time,
@@ -123,7 +123,7 @@ module.exports.get = function(conn, req, next) {
                   db.query(queryRanking, '', conn, function(res3) {
                     if(res3) {
                       var game_data = {
-                        active_mission: false,
+                        active_mission: 'false',
                         strength: res1[0].strength,
                         vitality: res1[0].vitality,
                         inteligence: res1[0].inteligence,
