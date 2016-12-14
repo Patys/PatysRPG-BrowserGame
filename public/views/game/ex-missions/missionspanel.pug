@@ -22,7 +22,8 @@
                 span.badge= game_data.mission_time
             .row
               .col-sm-12
-                form(action='/mission/start?mission_id='+ game_data.mission_id, method="post")
+                form(action='/mission/start', method="post")
+                  input(value=game_data.mission_id, hidden)
                   input.btn.btn-default(type="submit", value="Rozpocznij")
 
           .col-sm-8
@@ -52,7 +53,8 @@
                 span.badge= game_data.mission_time2
             .row
               .col-sm-12
-                form(action='/mission/start?mission_id='+ game_data.mission_id2, method="post")
+                form(action='/mission/start', method="post")
+                  input(value=game_data.mission_id2, hidden)
                   input.btn.btn-default(type="submit", value="Rozpocznij")
 
           .col-sm-8
@@ -83,8 +85,9 @@
                 span.badge= game_data.mission_time3
             .row
               .col-sm-12
-                form(action='/mission/start?mission_id='+ game_data.mission_id3, method="post")
-                  input.btn.btn-default(type="submit", value="Rozpocznij") 
+                form(action='/mission/start', method="post")
+                  input(value=game_data.mission_id3, hidden)
+                  input.btn.btn-default(type="submit", value="Rozpocznij")
 
           .col-sm-8
             img(src="http://i.imgur.com/eHA2FPC.jpg").img-responsive
