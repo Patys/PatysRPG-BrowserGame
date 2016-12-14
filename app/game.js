@@ -157,7 +157,7 @@ module.exports.startMission = function(req, res) {
                                       \""+'false'+"\",\
                                       \""+'false'+"\",\
                                       \""+date+"\",\
-                                      \"""\");";
+                                      \"\");";
               db.query(queryStartMission,'', conn, function(result) {
                 res.redirect('/game');
               });
