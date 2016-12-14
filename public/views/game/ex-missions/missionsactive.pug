@@ -1,1 +1,27 @@
-p Aktywne misje TODO
+#mission.panel-group(role='tablist', aria-multiselectable='false')
+  .panel.panel-default
+    .panel-body
+      .row
+        .col-sm-4
+          .row
+            .col-sm-12
+              h3= game_data.mission_name
+              p= game_data.mission_description
+          .row
+            .col-sm-8
+              p Pieniądze &nbsp;
+            .col-sm-4
+              span.badge.lead= game_data.mission_money
+          .row
+            .col-sm-8
+              p Czas &nbsp;
+            .col-sm-4
+              span.badge= game_data.mission_time
+          .row
+            .col-sm-8
+              p Rozpoczęto &nbsp;
+            .col-sm-4
+              span.badge= game_data.start_time
+
+        .col-sm-8
+          img(src="http://i.imgur.com/eHA2FPC.jpg").img-responsive

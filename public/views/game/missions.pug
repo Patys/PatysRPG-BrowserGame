@@ -12,7 +12,11 @@ div#panel-mission
           //-   a(href='#tab-active', aria-controls='tab-active', role='tab', data-toggle='tab') Aktywne
         // Tab panes
         .tab-content
-          #tab-missions.tab-pane.active(role='tabpanel')
-            include ex-missions/missionspanel.pug
+          - if game_data.active_mission == false
+            #tab-missions.tab-pane.active(role='tabpanel')
+              include ex-missions/missionspanel.pug
+          - else
+            #tab-missions.tab-pane.active(role='tabpanel')
+              include ex-missions/missionsactive.pug
           //- #tab-active.tab-pane(role='tabpanel')
           //-   include ex-missions/missionsactive.pug
