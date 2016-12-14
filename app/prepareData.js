@@ -71,16 +71,19 @@ module.exports.getDataMissions = function(conn, req, next) {
                     mission_time: missions[0].time,
                     mission_name: missions[0].name,
                     mission_description: missions[0].description,
+                    mission_id: missions[0].id,
                     mission_money2: missions[1].money,
                     mission_item2: missions[1].id_item,
                     mission_time2: missions[1].time,
                     mission_name2: missions[1].name,
                     mission_description2: missions[1].description,
+                    mission_id2: missions[1].id,
                     mission_money3: missions[2].money,
                     mission_item3: missions[2].id_item,
                     mission_time3: missions[2].time,
                     mission_name3: missions[2].name,
-                    mission_description3: missions[2].description
+                    mission_description3: missions[2].description,
+                    mission_id3: missions[2].id
                   };
                   next(game_data);
                 }

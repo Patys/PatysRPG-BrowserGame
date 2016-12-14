@@ -127,6 +127,52 @@ module.exports.missions = function (req, res) {
   }
 }
 
+module.exports.startMission = function(req, res) {
+  try {
+    pool.getConnection(function(err, conn){
+      if(err) throw err;
+
+      var post = req.body;
+      pool.getConnection(function(err, conn){
+        if(err) {
+          res.json(err);
+          // res.send('Bad user/passw');
+        } else {
+
+          var query = 'SELECT id FROM `users` WHERE `token` = ? ';
+          db.query(query, [req.session.user_id], conn, function(result) {
+            if(result[0]) {
+              var date;
+              date = new Date();
+              date = date.getUTCFullYear() + '-' +
+                  ('00' + (date.getUTCMonth()+1)).slice(-2) + '-' +
+                  ('00' + date.getUTCDate()).slice(-2) + ' ' +
+                  ('00' + date.getUTCHours()).slice(-2) + ':' +
+                  ('00' + date.getUTCMinutes()).slice(-2) + ':' +
+                  ('00' + date.getUTCSeconds()).slice(-2);
+              var queryStartMission = "INSERT INTO run_missions VALUES \
+                                      ('',\
+                                      \""+result[0].id+"\",\
+                                      \""+post.mission_id+"\",\
+                                      \""+'false'+"\",\
+                                      \""+'false'+"\",\
+                                      \""+date+"\",\
+                                      \"""\");";
+              db.query(queryStartMission,'', conn, function(result) {
+                res.redirect('/game');
+              });
+            }
+          });
+        }
+      });
+    });
+  } catch (err) {
+    // handle the error safely
+    console.log('Cannot get connection: \n\n' + err);
+    res.redirect('/error');
+  }
+}
+
 module.exports.ranking = function (req, res) {
   try {
     var page = req.query.page;
