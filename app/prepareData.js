@@ -36,27 +36,65 @@ module.exports.getDataCharacter = function(conn, req, next) {
 }
 
 module.exports.getDataMissions = function(conn, req, next) {
-  var queryMissions = 'SELECT * FROM missions ORDER BY RAND() LIMIT 3'; // to jest wolne :c
-  db.query(queryMissions, '', conn, function(missions) {
-    if(missions[0]) {
-      var game_data = {
-        mission_money: missions[0].money,
-        mission_item: missions[0].id_item,
-        mission_time: missions[0].time,
-        mission_name: missions[0].name,
-        mission_description: missions[0].description,
-        mission_money2: missions[1].money,
-        mission_item2: missions[1].id_item,
-        mission_time2: missions[1].time,
-        mission_name2: missions[1].name,
-        mission_description2: missions[1].description,
-        mission_money3: missions[2].money,
-        mission_item3: missions[2].id_item,
-        mission_time3: missions[2].time,
-        mission_name3: missions[2].name,
-        mission_description3: missions[2].description
-      };
-      next(game_data);
+  var query = 'SELECT id FROM `users` WHERE `token` = ? ';
+  db.query(query, [req.session.user_id], conn, function(result) {
+    if(result[0]) {
+      var selectStats = 'SELECT * from characters WHERE `id_user` = ?';
+      db.query(selectStats, [result[0].id], conn, function(res1) {
+        if(res1[0]) {
+
+          var selectActiveMission = 'SELECT * from run_missions WHERE `id_user` = ? AND ended="nie"';
+          db.query(selectActiveMission, [result[0].id], conn, function(activeMission) {
+            console.dir(activeMission);
+            if(activeMission.length > 0) {
+              var queryMissions = 'SELECT * FROM missions where `id` = ?';
+              db.query(queryMissions, activeMission[0].id_mission, conn, function(mission) {
+                var game_data = {
+                  active_mission: true,
+                  mission_description: mission[0].description,
+                  mission_name: mission[0].name,
+                  mission_time: mission[0].time,
+                  mission_money: mission[0].money,
+                  start_time: activeMission[0].start_time
+                };
+                next(game_data);
+              });
+            }
+            else {
+              var queryMissions = 'SELECT * FROM missions ORDER BY RAND() LIMIT 3'; // to jest wolne :c
+              db.query(queryMissions, '', conn, function(missions) {
+                if(missions[0]) {
+                  var game_data = {
+                    active_mission: false,
+                    mission_money: missions[0].money,
+                    mission_item: missions[0].id_item,
+                    mission_time: missions[0].time,
+                    mission_name: missions[0].name,
+                    mission_description: missions[0].description,
+                    mission_money2: missions[1].money,
+                    mission_item2: missions[1].id_item,
+                    mission_time2: missions[1].time,
+                    mission_name2: missions[1].name,
+                    mission_description2: missions[1].description,
+                    mission_money3: missions[2].money,
+                    mission_item3: missions[2].id_item,
+                    mission_time3: missions[2].time,
+                    mission_name3: missions[2].name,
+                    mission_description3: missions[2].description
+                  };
+                  next(game_data);
+                }
+              });
+            }
+          });
+
+        }
+        else {
+          console.log('no character');
+        }
+      });
+    } else {
+      console.log('wrong token');
     }
   });
 }
