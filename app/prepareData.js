@@ -100,6 +100,7 @@ module.exports.get = function(conn, req, next) {
 
           var selectActiveMission = 'SELECT * from run_missions WHERE `id_user` = ? AND ended="nie"';
           db.query(selectActiveMission, [result[0].id], conn, function(activeMission) {
+            console.dir(activeMission);
             if(activeMission.length > 0) {
               var queryMissions = 'SELECT * FROM missions where `id` = ?';
               db.query(queryMissions, activeMission[0].id_mission, conn, function(mission) {
