@@ -18,7 +18,12 @@
             .col-sm-4
               #mission-timer
                 script.
-                  console.log(#{game_data.start_time});
+                  var start = new Date("#{game_data.start_time}");
+                  var startMili = start.getTime();
+                  var current = newDate();
+                  var currentTime = current.getTime();
+                  var remainingMili = (startMili + #{game_data.start_time}*1000) - currentTime;
+                  document.getElementById("mission-timer").innerHTML(remainingMili);
 
         .col-sm-8
           img(src="http://i.imgur.com/eHA2FPC.jpg").img-responsive
