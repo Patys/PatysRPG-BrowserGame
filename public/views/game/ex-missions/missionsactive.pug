@@ -23,7 +23,7 @@
                   var current = new Date();
                   var currentTime = current.getTime();
                   var remainingMili = (startMili + #{game_data.mission_time}*1000) - currentTime;
-                  document.getElementById("mission-timer").innerHTML(remainingMili);
+                  document.getElementById("mission-timer").innerHTML = remainingMili;
 
         .col-sm-8
           img(src="http://i.imgur.com/eHA2FPC.jpg").img-responsive
