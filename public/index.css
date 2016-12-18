@@ -1,34 +1,33 @@
-
-@-webkit-keyframes AnimationName {
-    0%{background-position:19% 0%}
-    50%{background-position:82% 100%}
-    100%{background-position:19% 0%}
+@-webkit-keyframes background-moving {
+    0%{background-position:10% 0%}
+    50%{background-position:91% 100%}
+    100%{background-position:10% 0%}
 }
-@-moz-keyframes AnimationName {
-    0%{background-position:19% 0%}
-    50%{background-position:82% 100%}
-    100%{background-position:19% 0%}
+@-moz-keyframes background-moving {
+    0%{background-position:10% 0%}
+    50%{background-position:91% 100%}
+    100%{background-position:10% 0%}
 }
-@-o-keyframes AnimationName {
-    0%{background-position:19% 0%}
-    50%{background-position:82% 100%}
-    100%{background-position:19% 0%}
+@-o-keyframes background-moving {
+    0%{background-position:10% 0%}
+    50%{background-position:91% 100%}
+    100%{background-position:10% 0%}
 }
-@keyframes AnimationName {
-    0%{background-position:19% 0%}
-    50%{background-position:82% 100%}
-    100%{background-position:19% 0%}
+@keyframes background-moving {
+    0%{background-position:10% 0%}
+    50%{background-position:91% 100%}
+    100%{background-position:10% 0%}
 }
 
 body {
   height: 100%;
-  background: linear-gradient(150deg, #006507, #00ff15, #028907, #3aff00);
+  background: linear-gradient(312deg, #f94a4a, #ece541, #fa964b, #f6fa4b);
   background-size: 800% 800%;
 
-  -webkit-animation: AnimationName 41s ease infinite;
-  -moz-animation: AnimationName 41s ease infinite;
-  -o-animation: AnimationName 41s ease infinite;
-  animation: AnimationName 41s ease infinite;
+  -webkit-animation: background-moving 24s ease infinite;
+  -moz-animation: background-moving 24s ease infinite;
+  -o-animation: background-moving 24s ease infinite;
+  animation: background-moving 24s ease infinite;
  	font-family: 'Oxygen', sans-serif;
 }
 
@@ -38,22 +37,17 @@ h1.title {
 	font-weight: 400;
 }
 
-.bg {
-  background: url('http://i.imgur.com/iPOX337.jpg') no-repeat center center;
-  position: fixed;
-  width: 100%;
-  height: 350px; /*same height as jumbotron */
-  top:0;
-  left:0;
-  z-index: -1;
-}
-
 .jumbotron {
-  margin-bottom: 0px;
-  height: 350px;
-  color: white;
-  text-shadow: black 0.3em 0.3em 0.3em;
-  background:transparent;
+  background-color: #FFE573;
+  height: 500px;
+  text-align: center;
+    /* shadows and rounded borders */
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
 }
 
 .box {
