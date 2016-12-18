@@ -7,8 +7,8 @@ html
   body
     .bg
     .jumbotron
-      h1 Bootstrap Jumbotron
-      p.lead + Parallax Effect using jQuery
+      h1 PatysRPG
+      p.lead Witaj w grze!
 
     .container
       .row
@@ -16,13 +16,13 @@ html
           h3 Witaj bohaterze !
           a(href="login").btn.btn-large.btn-primary.hvr-shadow-radial Logowanie
         .col-md-6
-          h3 Dołącz do słowiańskiej drużyny !
+          h3 Dołącz do drużyny !
           a(href="register").btn.btn-large.btn-warning.hvr-shadow-radial Rejestracja
     .container.box
       a.twitter-grid(data-partner='tweetdeck', href='https://twitter.com/patys_prog/timelines/810531512340901888') Stanica Słowian
       script(async='', src='//platform.twitter.com/widgets.js', charset='utf-8')
 
     include scripts.pug
-    | <script">
+    | <script>
     | var jumboHeight = $('.jumbotron').outerHeight();function parallax(){var scrolled = $(window).scrollTop();$('.bg').css('height', (jumboHeight-scrolled) + 'px');}$(window).scroll(function(e){parallax();});
     | </script>
