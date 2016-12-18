@@ -1,33 +1,34 @@
-@-webkit-keyframes background-moving {
-    0%{background-position:10% 0%}
-    50%{background-position:91% 100%}
-    100%{background-position:10% 0%}
+
+@-webkit-keyframes AnimationName {
+    0%{background-position:19% 0%}
+    50%{background-position:82% 100%}
+    100%{background-position:19% 0%}
 }
-@-moz-keyframes background-moving {
-    0%{background-position:10% 0%}
-    50%{background-position:91% 100%}
-    100%{background-position:10% 0%}
+@-moz-keyframes AnimationName {
+    0%{background-position:19% 0%}
+    50%{background-position:82% 100%}
+    100%{background-position:19% 0%}
 }
-@-o-keyframes background-moving {
-    0%{background-position:10% 0%}
-    50%{background-position:91% 100%}
-    100%{background-position:10% 0%}
+@-o-keyframes AnimationName {
+    0%{background-position:19% 0%}
+    50%{background-position:82% 100%}
+    100%{background-position:19% 0%}
 }
-@keyframes background-moving {
-    0%{background-position:10% 0%}
-    50%{background-position:91% 100%}
-    100%{background-position:10% 0%}
+@keyframes AnimationName {
+    0%{background-position:19% 0%}
+    50%{background-position:82% 100%}
+    100%{background-position:19% 0%}
 }
 
 body {
   height: 100%;
-  background: linear-gradient(312deg, #f94a4a, #ece541, #fa964b, #f6fa4b);
+  background: linear-gradient(150deg, #000000, #00740a, #000000, #78c100);
   background-size: 800% 800%;
 
-  -webkit-animation: background-moving 24s ease infinite;
-  -moz-animation: background-moving 24s ease infinite;
-  -o-animation: background-moving 24s ease infinite;
-  animation: background-moving 24s ease infinite;
+  -webkit-animation: AnimationName 41s ease infinite;
+  -moz-animation: AnimationName 41s ease infinite;
+  -o-animation: AnimationName 41s ease infinite;
+  animation: AnimationName 41s ease infinite;
  	font-family: 'Oxygen', sans-serif;
 }
 
@@ -38,7 +39,8 @@ h1.title {
 }
 
 .jumbotron {
-  background-color: #FFE573;
+  background-color: #000;
+  color: #fff;
   height: 500px;
   text-align: center;
     /* shadows and rounded borders */
