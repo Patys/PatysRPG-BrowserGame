@@ -152,7 +152,7 @@ module.exports.startMission = function(req, res) {
                   ('00' + date.getUTCSeconds()).slice(-2);
 
               var end_date = new Date();
-              end_date = end_date.setTime(end_date.getTime() + 1000);
+              end_date.setTime(end_date.getTime() + 100000);
               end_date = end_date.getUTCFullYear() + '-' +
                   ('00' + (end_date.getUTCMonth()+1)).slice(-2) + '-' +
                   ('00' + end_date.getUTCDate()).slice(-2) + ' ' +
