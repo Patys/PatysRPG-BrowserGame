@@ -43,7 +43,7 @@ module.exports.getDataMissions = function(conn, req, next) {
       db.query(selectStats, [result[0].id], conn, function(res1) {
         if(res1[0]) {
 
-          var selectActiveMission = 'SELECT * from run_missions WHERE `id_user` = ? AND ended="nie"';
+          var selectActiveMission = 'SELECT * from run_missions WHERE `id_user` = ? AND ended="0"';
           db.query(selectActiveMission, [result[0].id], conn, function(activeMission) {
             if(activeMission.length > 0) {
               var queryMissions = 'SELECT * FROM missions where `id` = ?';
