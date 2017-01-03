@@ -18,12 +18,7 @@
             .col-sm-4
               #mission-timer
                 script.
-                  var current = new Date();
-                  var end = new Date("#{game_data.end_time}");
-                  if(current > end)
-                    document.getElementById("mission-timer").innerHTML = '<form action="/mission/end" method="post"><input class="btn btn-default" type="submit" value="Zakończ">';
-                  else
-                    document.getElementById("mission-timer").innerHTML = '' + end;
+                  document.getElementById("mission-timer").innerHTML = '<form action="/mission/end" method="post"><input class="btn btn-default" type="submit" value="#{game_data.end_time}">';
 
         .col-sm-8
           img(src="http://i.imgur.com/eHA2FPC.jpg").img-responsive
