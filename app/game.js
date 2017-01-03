@@ -200,8 +200,7 @@ module.exports.endMission = function(req, res) {
 
               // TODO: Check date with mission date
 
-              var queryUpdateMission = 'UPDATE run_missions SET ended="1" WHERE `id_user` = ?';
-              console.dir(result);
+              var queryUpdateMission = 'UPDATE run_missions, characters SET run_missions.ended="1", run_missions.recevied="1", characters.cash=characters.cash+100 WHERE `run_missions.id_user` = ? AND `characters.id_user` = ? ';
               db.query(queryUpdateMission,[result[0].id], conn, function(resultEndMission) {
                 conn.release();
                 res.redirect('/game');

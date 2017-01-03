@@ -1,4 +1,5 @@
 function main() {
+  $("#content").load("/character");
   $('body').on('click', '#menu-character', function(e){
       $("#content").load("/character");
   });
