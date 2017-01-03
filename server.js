@@ -15,7 +15,7 @@ var routes = require('./app/routes');
 
 app.set('view engine', 'pug');
 app.set('views', './public/views');
-app.set('trust proxy', 1);
+app.set('trust proxy', 1); // trust no one
 
 
 app.use('/', routes);

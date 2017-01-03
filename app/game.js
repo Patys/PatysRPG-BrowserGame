@@ -175,6 +175,48 @@ module.exports.startMission = function(req, res) {
   }
 }
 
+module.exports.endMission = function(req, res) {
+  try {
+    pool.getConnection(function(err, conn){
+      if(err) throw err;
+
+      pool.getConnection(function(err, conn){
+        if(err) {
+          res.json(err);
+          // res.send('Bad user/passw');
+        } else {
+
+          var query = 'SELECT id FROM `users` WHERE `token` = ? ';
+          db.query(query, [req.session.user_id], conn, function(result) {
+            if(result[0]) {
+              var date;
+              date = new Date();
+              date = date.getUTCFullYear() + '-' +
+                  ('00' + (date.getUTCMonth()+1)).slice(-2) + '-' +
+                  ('00' + date.getUTCDate()).slice(-2) + ' ' +
+                  ('00' + date.getUTCHours()).slice(-2) + ':' +
+                  ('00' + date.getUTCMinutes()).slice(-2) + ':' +
+                  ('00' + date.getUTCSeconds()).slice(-2);
+
+              // TODO: Check date with mission date
+
+              var queryUpdateMission = 'UPDATE run_missions SET ended="1" WHERE `id_user` = ?';
+              db.query(queryUpdateMission,[req.session.user_id], conn, function(resultEndMission) {
+                conn.release();
+                res.redirect('/game');
+              });
+            }
+          });
+        }
+      });
+    });
+  } catch (err) {
+    // handle the error safely
+    console.log('Cannot get connection: \n\n' + err);
+    res.redirect('/error');
+  }
+}
+
 module.exports.ranking = function (req, res) {
   try {
     var page = req.query.page;
