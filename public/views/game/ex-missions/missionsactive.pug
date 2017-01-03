@@ -24,7 +24,7 @@
                   var currentTime = current.getTime();
                   var remainingMili = (startMili + #{game_data.mission_time}*1000) - currentTime;
                   if(remainingMili < 0)
-                    document.getElementById("mission-timer").innerHTML = '<button id="end-mission-button">Zakończ</button>';
+                    document.getElementById("mission-timer").innerHTML = '<form action="/mission/end" method="post"><input class="btn btn-default" type="submit" value="Zakończ">';
                   else
                     document.getElementById("mission-timer").innerHTML = '' + (remainingMili/1000/60) + ' min';
 

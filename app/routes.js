@@ -38,7 +38,7 @@ routes.get('/game', auth.check, game.get);
 routes.get('/character', auth.check, game.character);
 routes.get('/missions', auth.check, game.missions);
 routes.post('/mission/start', auth.check, game.startMission);
-routes.get('/mission/end', auth.check, game.endMission);
+routes.post('/mission/end', auth.check, game.endMission);
 routes.get('/shop', auth.check, game.shop);
 routes.get('/arena', auth.check, game.arena);
 routes.get('/ranking', auth.check, game.ranking);

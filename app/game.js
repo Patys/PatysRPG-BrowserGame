@@ -189,19 +189,21 @@ module.exports.endMission = function(req, res) {
           var query = 'SELECT id FROM `users` WHERE `token` = ? ';
           db.query(query, [req.session.user_id], conn, function(result) {
             if(result[0]) {
-              var date;
-              date = new Date();
-              date = date.getUTCFullYear() + '-' +
-                  ('00' + (date.getUTCMonth()+1)).slice(-2) + '-' +
-                  ('00' + date.getUTCDate()).slice(-2) + ' ' +
-                  ('00' + date.getUTCHours()).slice(-2) + ':' +
-                  ('00' + date.getUTCMinutes()).slice(-2) + ':' +
-                  ('00' + date.getUTCSeconds()).slice(-2);
+              // var date;
+              // date = new Date();
+              // date = date.getUTCFullYear() + '-' +
+              //     ('00' + (date.getUTCMonth()+1)).slice(-2) + '-' +
+              //     ('00' + date.getUTCDate()).slice(-2) + ' ' +
+              //     ('00' + date.getUTCHours()).slice(-2) + ':' +
+              //     ('00' + date.getUTCMinutes()).slice(-2) + ':' +
+              //     ('00' + date.getUTCSeconds()).slice(-2);
 
               // TODO: Check date with mission date
 
               var queryUpdateMission = 'UPDATE run_missions SET ended="1" WHERE `id_user` = ?';
+              console.log(req.session.user_id);
               db.query(queryUpdateMission,[req.session.user_id], conn, function(resultEndMission) {
+                console.log(queryUpdateMission);
                 conn.release();
                 res.redirect('/game');
               });
