@@ -152,13 +152,13 @@ module.exports.startMission = function(req, res) {
                   ('00' + date.getUTCSeconds()).slice(-2);
 
               var end_date = new Date();
-              end_date = end_date.setTime(end_date.getTime() + 1000);;
-              end_date = date.getUTCFullYear() + '-' +
-                  ('00' + (date.getUTCMonth()+1)).slice(-2) + '-' +
-                  ('00' + date.getUTCDate()).slice(-2) + ' ' +
-                  ('00' + date.getUTCHours()).slice(-2) + ':' +
-                  ('00' + date.getUTCMinutes()).slice(-2) + ':' +
-                  ('00' + date.getUTCSeconds()).slice(-2);
+              end_date = end_date.setTime(end_date.getTime() + 1000);
+              end_date = end_date.getUTCFullYear() + '-' +
+                  ('00' + (end_date.getUTCMonth()+1)).slice(-2) + '-' +
+                  ('00' + end_date.getUTCDate()).slice(-2) + ' ' +
+                  ('00' + end_date.getUTCHours()).slice(-2) + ':' +
+                  ('00' + end_date.getUTCMinutes()).slice(-2) + ':' +
+                  ('00' + end_date.getUTCSeconds()).slice(-2);
               var queryStartMission = "INSERT INTO run_missions VALUES \
                                       ('',\
                                       \""+result[0].id+"\",\
