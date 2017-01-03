@@ -54,7 +54,8 @@ module.exports.getDataMissions = function(conn, req, next) {
                   mission_name: mission[0].name,
                   mission_time: mission[0].time,
                   mission_money: mission[0].money,
-                  start_time: activeMission[0].start_time
+                  start_time: activeMission[0].start_time,
+                  end_time: activeMission[0].end_time
                 };
                 next(game_data);
               });

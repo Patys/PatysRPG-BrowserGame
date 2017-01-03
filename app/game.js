@@ -143,9 +143,17 @@ module.exports.startMission = function(req, res) {
           var query = 'SELECT id FROM `users` WHERE `token` = ? ';
           db.query(query, [req.session.user_id], conn, function(result) {
             if(result[0]) {
-              var date;
-              date = new Date();
+              var date = new Date();
               date = date.getUTCFullYear() + '-' +
+                  ('00' + (date.getUTCMonth()+1)).slice(-2) + '-' +
+                  ('00' + date.getUTCDate()).slice(-2) + ' ' +
+                  ('00' + date.getUTCHours()).slice(-2) + ':' +
+                  ('00' + date.getUTCMinutes()).slice(-2) + ':' +
+                  ('00' + date.getUTCSeconds()).slice(-2);
+
+              var end_date = new Date();
+              end_date = end_date.setTime(end_date.getTime() + 1000);;
+              end_date = date.getUTCFullYear() + '-' +
                   ('00' + (date.getUTCMonth()+1)).slice(-2) + '-' +
                   ('00' + date.getUTCDate()).slice(-2) + ' ' +
                   ('00' + date.getUTCHours()).slice(-2) + ':' +
@@ -158,7 +166,7 @@ module.exports.startMission = function(req, res) {
                                       \""+'false'+"\",\
                                       \""+'false'+"\",\
                                       \""+date+"\",\
-                                      \"\");";
+                                      \""+end_date+"\");";
               db.query(queryStartMission,'', conn, function(result) {
                 conn.release();
                 res.redirect('/game');
@@ -189,19 +197,18 @@ module.exports.endMission = function(req, res) {
           var query = 'SELECT id FROM `users` WHERE `token` = ? ';
           db.query(query, [req.session.user_id], conn, function(result) {
             if(result[0]) {
-              // var date;
-              // date = new Date();
-              // date = date.getUTCFullYear() + '-' +
-              //     ('00' + (date.getUTCMonth()+1)).slice(-2) + '-' +
-              //     ('00' + date.getUTCDate()).slice(-2) + ' ' +
-              //     ('00' + date.getUTCHours()).slice(-2) + ':' +
-              //     ('00' + date.getUTCMinutes()).slice(-2) + ':' +
-              //     ('00' + date.getUTCSeconds()).slice(-2);
+              var date = new Date();
+              date = date.getUTCFullYear() + '-' +
+                  ('00' + (date.getUTCMonth()+1)).slice(-2) + '-' +
+                  ('00' + date.getUTCDate()).slice(-2) + ' ' +
+                  ('00' + date.getUTCHours()).slice(-2) + ':' +
+                  ('00' + date.getUTCMinutes()).slice(-2) + ':' +
+                  ('00' + date.getUTCSeconds()).slice(-2);
 
               // TODO: Check date with mission date
 
-              var queryUpdateMission = 'UPDATE run_missions, characters SET run_missions.ended="1", run_missions.recevied="1", characters.cash=characters.cash+100 WHERE `run_missions.id_user` = ? AND `characters.id_user` = ? ';
-              db.query(queryUpdateMission,[result[0].id], conn, function(resultEndMission) {
+              var queryUpdateMission = 'UPDATE run_missions, characters SET run_missions.ended="1", run_missions.recevied="1", characters.cash=characters.cash+100 WHERE `run_missions.id_user` = ? AND `characters.id_user` = ? AND `run_missions.end_time` < ?';
+              db.query(queryUpdateMission,[result[0].id, result[0].id, date], conn, function(resultEndMission) {
                 conn.release();
                 res.redirect('/game');
               });
