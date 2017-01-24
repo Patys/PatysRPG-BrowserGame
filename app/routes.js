@@ -28,17 +28,6 @@ routes.use(function(req, res, next) {
     next();
 });
 
-
-function redirectSec(req, res, next) {
-  if (req.headers['x-forwarded-proto'] == 'http') {
-      res.redirect('https://' + req.headers.host + req.path);
-  } else {
-      return next();
-  }
-}
-
-routes.get('', redirectSec, self.routes[r]);
-
 routes.get('/', index);
 routes.get('/login', login.get);
 routes.post('/login', login.post);
