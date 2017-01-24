@@ -24,6 +24,7 @@ app.use(function(req, res, next){
   res.render('ups');
 });
 
+
 ///////////////////////
 //AUTH TEST
 //////////////////////
@@ -98,6 +99,6 @@ app.use(function(req, res, next){
 //   // });
 // });
 
-app.listen(process.env.OPENSHIFT_NODEJS_PORT || 8080, process.env.OPENSHIFT_NODEJS_IP || "127.0.0.1", function () {
+app.listen(process.env.OPENSHIFT_NODEJS_PORT || 443, process.env.OPENSHIFT_NODEJS_IP || "127.0.0.1", function () {
   console.log('Run');
 });
