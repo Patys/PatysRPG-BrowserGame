@@ -3,6 +3,7 @@ var app = express();
 // var mysql = require('mysql');
 var pug = require('pug');
 var routes = require('./app/routes');
+var ExpressPeerServer = require('peer').ExpressPeerServer;
 // var conndburl = process.env.OPENSHIFT_MYSQL_DB_URL;
 // var pool = mysql.createPool({
 //       host     : process.env.OPENSHIFT_MYSQL_DB_HOST,
@@ -19,6 +20,8 @@ app.set('trust proxy', 1); // trust no one
 
 
 app.use('/', routes);
+
+
 
 app.use(function(req, res, next){
   res.render('ups');
@@ -99,6 +102,22 @@ app.use(function(req, res, next){
 //   // });
 // });
 
-app.listen(process.env.OPENSHIFT_NODEJS_PORT || 8080, process.env.OPENSHIFT_NODEJS_IP || "127.0.0.1", function () {
+var server = app.listen(process.env.OPENSHIFT_NODEJS_PORT || 8080, process.env.OPENSHIFT_NODEJS_IP || "127.0.0.1", function () {
   console.log('Run');
+});
+
+/// PEER TO PEER
+var options = {
+    debug: true
+}
+
+app.use('/p2papi', ExpressPeerServer(server, options));
+
+server.on('connection', function(id) {
+  console.log(id);
+});
+
+
+server.on('disconnect', function(id) {
+  console.log(id);
 });
