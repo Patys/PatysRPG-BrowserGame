@@ -23,9 +23,9 @@ app.use('/', routes);
 
 
 
-app.use(function(req, res, next){
-  res.render('ups');
-});
+// app.use(function(req, res, next){
+//   res.render('ups');
+// });
 
 
 ///////////////////////
