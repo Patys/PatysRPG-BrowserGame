@@ -108,7 +108,7 @@ var server = app.listen(process.env.OPENSHIFT_NODEJS_PORT || 8080, process.env.O
 
 /// PEER TO PEER
 var options = {
-    debug: true
+    debug: 3
 }
 
 app.use('/p2papi', ExpressPeerServer(server, options));
