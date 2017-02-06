@@ -106,18 +106,19 @@ var server = app.listen(process.env.OPENSHIFT_NODEJS_PORT || 8080, process.env.O
   console.log('Run');
 });
 
-/// PEER TO PEER
 var options = {
-    debug: 3
+    debug: true,
+    allow_discovery: true
 }
 
-app.use('/p2papi', ExpressPeerServer(server, options));
+peerServer = ExpressPeerServer(server, options)
+app.use('/api', peerServer);
 
-server.on('connection', function(id) {
-  console.log(id);
+peerServer.on('connection', function(id) {
+    console.log(id)
+  console.log(server._clients)
 });
 
-
 server.on('disconnect', function(id) {
-  console.log(id);
+    console.log(id + "deconnected")
 });
