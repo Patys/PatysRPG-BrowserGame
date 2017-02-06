@@ -112,7 +112,7 @@ var options = {
 }
 
 peerServer = ExpressPeerServer(server, options)
-app.use('/api', peerServer);
+app.use('/p2papi', peerServer);
 
 peerServer.on('connection', function(id) {
     console.log(id)
