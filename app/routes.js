@@ -48,6 +48,8 @@ routes.get('/group', auth.check, game.group);
 routes.get('/error', error.get);
 routes.post('/error', error.post);
 
+routes.get('/rpg', function(req,res){res.render('p2pgame');});
+
 routes.get('/thanks', function(req,res){res.render('thanks');});
 routes.get('/ups', function(req,res){res.render('ups');});
 

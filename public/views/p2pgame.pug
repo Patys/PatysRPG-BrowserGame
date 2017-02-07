@@ -1,0 +1,24 @@
+html
+  head
+    include link.pug
+    | <style type="text/css">
+    include ../game.css
+    | </style>
+  body
+    .container
+      .jumbotron
+        h1.title PatysRPG
+    .container
+      .row
+        .col-sm-12
+
+    footer.footer
+      p(style="text-align: center;").text-muted Patryk "patys_prog" Szczygło &copy; 2016
+    include scripts.pug
+    script(src='http://cdn.peerjs.com/0.3/peer.js')
+    | <script>
+    include ../phaser.min.js
+    | </script>
+    | <script>
+    include ../p2p.js
+    | </script>

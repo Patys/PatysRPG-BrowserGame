@@ -115,10 +115,11 @@ peerServer = ExpressPeerServer(server, options)
 app.use('/p2papi', peerServer);
 
 peerServer.on('connection', function(id) {
-    console.log(id)
-  console.log(server._clients)
+  console.log(id);
+  console.log(server._clients);
+  peerServer.send('Hello!');
 });
 
 server.on('disconnect', function(id) {
-    console.log(id + "deconnected")
+    console.log(id + "deconnected");
 });
