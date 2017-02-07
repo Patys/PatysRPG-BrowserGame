@@ -121,25 +121,21 @@ peerServer = ExpressPeerServer(server, options)
 app.use('/p2papi', peerServer);
 
 server.on('error', function(err) {
-  console.log(err);
-  console.log('server ' + server._clients);
-  console.log('peerServer ' + peerServer._clients);
+  console.log('ERROR' + err);
+  console.dir(peerServer._clients);
 });
 
 server.on('open', function(id) {
-  console.log(id);
-  console.log('server ' + server._clients);
-  console.log('peerServer ' + peerServer._clients);
+  console.log('OPEN' + id);
+  console.dir(peerServer._clients);
 });
 
 server.on('connection', function(id) {
-  console.log(id);
-  console.log('server ' + server._clients);
-  console.log('peerServer ' + peerServer._clients);
+  console.log('Connection: ' + id);
+  console.dir(peerServer._clients);
 });
 
 server.on('disconnect', function(id) {
     console.log(id + "disconnect");
-    console.log('server ' + server._clients);
-    console.log('peerServer ' + peerServer._clients);
+    console.dir(peerServer._clients);
 });
