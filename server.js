@@ -120,21 +120,21 @@ var options = {
 peerServer = ExpressPeerServer(server, options)
 app.use('/p2papi', peerServer);
 
-peerServer.on('error', function(id) {
+server.on('error', function(id) {
   console.dir(id);
-  console.log(peerServer._clients);
+  console.log(server._clients);
 });
 
-peerServer.on('open', function(id) {
+server.on('open', function(id) {
   console.log(id);
-  console.log(peerServer._clients);
+  console.log(server._clients);
 });
 
-peerServer.on('connection', function(id) {
+server.on('connection', function(id) {
   console.log(id);
-  console.log(peerServer._clients);
+  console.log(server._clients);
 });
 
-peerServer.on('disconnect', function(id) {
+server.on('disconnect', function(id) {
     console.log(id + "deconnected");
 });
