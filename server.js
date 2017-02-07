@@ -112,6 +112,7 @@ var server = app.listen(process.env.OPENSHIFT_NODEJS_PORT || 8080, process.env.O
 });
 
 var options = {
+    port: 9000,
     debug: true,
     allow_discovery: true
 }
