@@ -1,6 +1,6 @@
 var peer = new Peer({
 	host: location.hostname,
-	port: 9000),
+	port: 9000,
 	path: '/p2papi'
 });
 
