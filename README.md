@@ -1,3 +1,3 @@
-The OpenShift `nodejs` cartridge documentation can be found at:
+RPG game made with node.js and MySQL database.
 
-http://openshift.github.io/documentation/oo_cartridge_guide.html#nodejs
+Currently on http://rpg.patys.pl
